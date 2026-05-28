@@ -1,0 +1,64 @@
+name: Build CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Verify Compilation
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Rust toolchain
+      uses: dtolnay/rust-toolchain@nightly
+      with:
+        components: rustfmt, clippy
+
+    - name: Cache Rust dependencies
+      uses: Swatinem/rust-cache@v2
+      with:
+        workspaces: "src -> target"
+        cache-on-failure: true
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        cache: 'npm'
+
+    - uses: denoland/setup-deno@v2
+      with:
+        deno-version: v2.1.x
+
+    - name: Install npm dependencies
+      run: npm ci
+
+    - name: Build library
+      run: npm run build:lib
+
+    - name: Check Rust formatting
+      run: cargo fmt --all -- --check
+
+    - name: Run Clippy (lint)
+      run: cargo clippy --workspace --all-targets -- -D warnings
+
+    - name: Build Rust backend
+      run: cargo build --verbose
+
+    - name: Type check TypeScript
+      run: npm run type-check
+
+    - name: Build UI
+      run: npm run build:ui
+
+    - name: Full release build
+      run: npm run build:release

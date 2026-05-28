@@ -1,0 +1,204 @@
+/* 关于弹窗 - 背景模型 */
+.about-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* 弹窗容器 - 中心固定大小 */
+.about-modal-container {
+  width: 360px;
+  height: 340px;
+  background: rgba(46, 46, 46, 0.95);
+  border: none;
+  box-shadow: 0px 12px 48px 0px rgba(0, 0, 0, 0.36);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-container {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    box-shadow: 0px 12px 48px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* "关于"标题文字 */
+.about-modal-title-text {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.86);
+  z-index: 10;
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-title-text {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 关闭按钮 */
+.about-modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* 关闭icon */
+.close-btn-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* 浅色模式下将白底 SVG 变为黑色显示 */
+@media (prefers-color-scheme: light) {
+  .close-btn-icon {
+    filter: brightness(0) saturate(100%);
+  }
+}
+
+/* SVG图标 */
+.about-modal-icon {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 78px;
+  left: 144px;
+  object-fit: contain;
+}
+
+/* 标题文字 Magic视界 */
+.about-modal-title {
+  position: absolute;
+  top: 162px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: Honor Sans Design;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: normal;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-title {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 版本文字 */
+.about-modal-version {
+  position: absolute;
+  top: 190px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-version {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* 众测先锋体验版 */
+.about-modal-beta {
+  position: absolute;
+  top: 214px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-beta {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* 开源软件声明 - 可点击 */
+.about-modal-link {
+  position: absolute;
+  top: 278px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: rgba(0, 122, 255, 0.9);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.about-modal-link:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-link {
+    color: rgba(0, 122, 255, 1);
+  }
+}
+
+/* 版权文字 */
+.about-modal-copyright {
+  position: absolute;
+  top: 304px;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  .about-modal-copyright {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}

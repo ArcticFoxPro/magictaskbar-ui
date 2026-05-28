@@ -1,0 +1,13 @@
+﻿runtime:
+  corrupted_data: 损坏的数据
+  corrupted_file: 配置文件已损坏，使用默认值代替。
+  corrupted_file_path: 文件路径损坏
+  download: 前往下载页面
+  not_found: 未找到 WebView2 运行时
+  not_found_description: MagicTaskbar UI 需要 Webview2 运行时。请安装它。
+  outdated: WebView2 运行时已过时
+  outdated_description: MagicTaskbar UI 需要 Webview2 运行时 %{min_version} 或更高版本。请更新它。
+service:
+  not_running: MagicTaskbar UI 服务未运行
+  not_running_description: MagicTaskbar UI 服务（magictaskbar-service）是应用程序正常工作的依赖项/帮助程序。
+  not_running_ok: 启动服务

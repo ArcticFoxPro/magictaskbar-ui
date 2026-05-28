@@ -1,0 +1,13 @@
+# 应用通知白名单配置文件
+# 包含需要上报通知的应用程序进程名
+
+notifications:
+  # 聊天应用
+  - Weixin.exe
+  - QQ.exe
+  - HONOR E.exe
+  - WXWork.exe
+  - DingTalk.exe
+  - TBLIVE.exe
+  - Feishu.exe
+  - WeMeetApp.exe

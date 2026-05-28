@@ -1,0 +1,15 @@
+.vscode
+dist
+.dist
+out
+node_modules
+.env
+target
+gen
+
+# Submission Files
+/scripts/SBTemp
+monitoring.ps1
+
+# rust-analyzer
+rustc-ice-*.txt

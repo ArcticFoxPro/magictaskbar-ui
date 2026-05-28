@@ -1,0 +1,446 @@
+/* 检查更新弹窗 - 背景模型 */
+.check-update-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* 弹窗容器 - 填满整个窗口 */
+.check-update-modal-container {
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 46, 46, 0.95);
+  border: none;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.36);
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-container {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* 弹窗头部 */
+.check-update-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 弹窗标题 */
+.check-update-modal-title {
+  margin: 0;
+  font-family: HONOR Sans Design;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.86);
+  letter-spacing: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-title {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 关闭按钮 */
+.check-update-modal-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-close-btn {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.check-update-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.check-update-modal-close-btn:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-close-btn:active {
+    background: rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* 弹窗内容 */
+.check-update-modal-content {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+/* 版本信息区域 */
+.check-update-modal-version-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.version-label {
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  .version-label {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.version-value {
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (prefers-color-scheme: light) {
+  .version-value {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 检查更新按钮容器 */
+.check-update-modal-check-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* 检查更新按钮 */
+.check-update-modal-check-btn {
+  width: 100%;
+  max-width: 200px;
+  height: 36px;
+  padding: 8px 24px;
+  background: linear-gradient(135deg, rgba(98, 178, 255, 0.8) 0%, rgba(52, 155, 245, 0.8) 100%);
+  border: none;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.check-update-modal-check-btn:hover {
+  background: linear-gradient(135deg, rgba(98, 178, 255, 1) 0%, rgba(52, 155, 245, 1) 100%);
+  box-shadow: 0px 6px 16px rgba(52, 155, 245, 0.36);
+}
+
+.check-update-modal-check-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0px 2px 8px rgba(52, 155, 245, 0.24);
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-check-btn {
+    background: linear-gradient(135deg, rgba(52, 155, 245, 0.8) 0%, rgba(52, 155, 245, 0.9) 100%);
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .check-update-modal-check-btn:hover {
+    background: linear-gradient(135deg, rgba(52, 155, 245, 1) 0%, rgba(52, 155, 245, 1) 100%);
+  }
+}
+
+/* 更新消息 */
+.check-update-modal-message {
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  min-height: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-message {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.check-update-modal-message.success {
+  color: rgba(76, 175, 80, 0.9);
+}
+
+.check-update-modal-message.error {
+  color: rgba(244, 67, 54, 0.9);
+}
+
+.check-update-modal-message.info {
+  color: rgba(33, 150, 243, 0.9);
+}
+
+/* SVG图标 */
+.check-update-modal-icon {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 112px;
+  left: 164px;
+  right: 164px;
+  object-fit: contain;
+}
+
+/* "检查更新"标题文字 */
+.check-update-modal-title-text {
+  width: 144px;
+  height: 16px;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-modal-title-text {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 关闭按钮 */
+.check-update-modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 关闭icon */
+.close-btn-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* 浅色模式下将白底 SVG 变为黑色显示 */
+@media (prefers-color-scheme: light) {
+  .close-btn-icon {
+    filter: brightness(0) saturate(100%);
+  }
+}
+
+/* 检查更新操作按钮 */
+.check-update-action-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 116px;
+  width: 168px;
+  height: 32px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+}
+
+/* 按钮禁用状态 */
+.check-update-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* 操作按钮图了 */
+.action-btn-icon {
+  width: 168px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* 操作按钮文字 */
+.action-btn-text {
+  position: absolute;
+  width: 136px;
+  height: 18px;
+  top: 6.5px;
+  bottom: 7.5px;
+  font-family: HonorSans;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: normal;
+  color: #FFFFFF;
+  pointer-events: none;
+}
+
+/* "已是最新版本"状态文字 */
+.check-update-status-text {
+  position: absolute;
+  width: 352px;
+  height: 24px;
+  top: 216px;
+  left: 24px;
+  font-family: Honor Sans Design;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-status-text {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 旋转加载标警 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.check-update-loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.86);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-loading-spinner {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* "当前版本"文字 */
+.check-update-version-text {
+  position: absolute;
+  width: 352px;
+  height: 18px;
+  top: 248px;
+  left: 24px;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-version-text {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* 下载进度条容器 */
+.check-update-progress-container {
+  position: absolute;
+  width: 352px;
+  height: 4px;
+  top: 280px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-progress-container {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* 下载进度条填充 */
+.check-update-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(98, 178, 255, 0.9) 0%, rgba(52, 155, 245, 0.9) 100%);
+  border-radius: 2px;
+  transition: width 0.15s ease-out;
+}
+
+@media (prefers-color-scheme: light) {
+  .check-update-progress-bar {
+    background: linear-gradient(90deg, rgba(52, 155, 245, 0.9) 0%, rgba(52, 155, 245, 1) 100%);
+  }
+}

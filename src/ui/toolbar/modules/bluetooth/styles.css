@@ -1,0 +1,732 @@
+/* ========== 蓝牙模块图标样式 ========== */
+.bluetooth-module {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+}
+
+.bluetooth-module.selected {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.bluetooth-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========== 蓝牙主题变量 ========== */
+.bluetooth-popup,
+.bluetooth-disconnect-dialog,
+.pairing-modal-container,
+.pairing-failed-popup {
+  --bt-surface: rgba(20, 20, 22, 0.75);
+  --bt-surface-solid: #202022;
+  --bt-text: rgba(255, 255, 255, 0.86);
+  --bt-text-muted: rgba(255, 255, 255, 0.6);
+  --bt-divider: rgba(255, 255, 255, 0.08);
+  --bt-border: rgba(255, 255, 255, 0.16);
+  --bt-icon: #fff;
+  --bt-row-hover: rgba(255, 255, 255, 0.05);
+  --bt-scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --bt-scrollbar-track: transparent;
+  --bt-action-btn-bg: rgba(255, 255, 255, 0.05);
+  --bt-action-btn-bg-hover: rgba(255, 255, 255, 0.08);
+  --bt-accent: #3D7FFF;
+  --bt-accent-hover: #4A8CFF;
+}
+
+@media (prefers-color-scheme: light) {
+  .bluetooth-popup,
+  .bluetooth-disconnect-dialog,
+  .pairing-modal-container,
+  .pairing-failed-popup {
+    --bt-surface: rgba(250, 251, 253, 0.75);
+    --bt-surface-solid: #ffffff;
+    --bt-text: rgba(0, 0, 0, 0.86);
+    --bt-text-muted: rgba(0, 0, 0, 0.6);
+    --bt-divider: rgba(0, 0, 0, 0.08);
+    --bt-border: rgba(0, 0, 0, 0.16);
+    --bt-icon: #000;
+    --bt-row-hover: rgba(0, 0, 0, 0.04);
+    --bt-scrollbar-thumb: rgba(0, 0, 0, 0.22);
+    --bt-scrollbar-track: transparent;
+    --bt-action-btn-bg: rgba(0, 0, 0, 0.06);
+    --bt-action-btn-bg-hover: rgba(0, 0, 0, 0.09);
+    --bt-accent: #3D7FFF;
+    --bt-accent-hover: #4A8CFF;
+  }
+  .bluetooth-popup {
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  .bluetooth-disconnect-dialog,
+  .pairing-modal-container,
+  .pairing-failed-popup {
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ========== 整体蓝牙弹窗容器 ========== */
+.bluetooth-popup {
+  position: relative;
+  min-height: 89px;
+  width: 296px;
+  border-radius: 9px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  gap: 0px;
+  background: var(--bt-surface);
+  border: 1px solid var(--bt-border);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  color: var(--bt-text);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* ========== 第一分区：头部区域（蓝牙 + 开关） ========== */
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px 8px 16px;
+  height: 44px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--bt-divider);
+}
+
+.popup-header span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bt-text);
+}
+
+.switch-icon {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* ========== 第二、三分区：内容区域（已配对 + 可用设备） ========== */
+.popup-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-right: 2px;
+  margin-top: 4px;
+  padding-right: 0px;
+  border-bottom: 1px solid var(--bt-divider);
+  max-height: 252px;
+}
+
+/* 蓝牙关闭时隐藏底部边框，避免与header边框叠加 */
+.popup-body-disabled {
+  border-bottom: none;
+}
+
+/* Scrollbar styling */
+.popup-body::-webkit-scrollbar {
+  width: 3px;
+}
+
+.popup-body::-webkit-scrollbar-track {
+  background: var(--bt-scrollbar-track);
+  border-radius: 2px;
+}
+
+.popup-body::-webkit-scrollbar-thumb {
+  background: var(--bt-scrollbar-thumb);
+  border-radius: 2px;
+}
+
+.popup-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ========== 分区标题 ========== */
+.device-section-title {
+  padding: 10px 16px 4px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--bt-text-muted);
+}
+
+/* ========== 第四分区：底部更多设置 ========== */
+.popup-footer {
+  width: 288px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+.popup-footer:hover {
+  background: var(--bt-row-hover);
+}
+
+.popup-footer-item {
+  width: 264px;
+  height: 20px;
+  font-family: "HONOR Sans Design";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0em;
+  font-variation-settings: "opsz" auto;
+  font-feature-settings: "kern" on;
+  color: var(--bt-text);
+}
+
+/* ========== 蓝牙设备列表 ========== */
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ========== 设备项容器 ========== */
+.device-item-container {
+  position: relative;
+}
+
+/* ========== 单个设备项 ========== */
+.device-item {
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  height: 32px;
+  margin: 4px 4px;
+  gap: 8px;
+  color: var(--bt-text);
+}
+
+.device-item:hover {
+  background-color: var(--bt-row-hover);
+}
+
+/* 选中的设备项 */
+.device-item.device-selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.device-item.device-selected:hover {
+  background-color: var(--bt-row-hover);
+}
+
+/* 已连接的设备项 */
+.device-item.device-connected {
+  color: var(--bt-accent);
+  font-weight: 600;
+}
+
+.device-item.device-connected .device-name {
+  color: var(--bt-accent);
+  font-weight: 600;
+}
+
+/* ========== 设备信息容器 ========== */
+.device-info {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 设备类型图标 */
+.device-type-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(100%);
+  opacity: 0.86;
+}
+
+@media (prefers-color-scheme: light) {
+  .device-type-icon {
+    filter: brightness(0) saturate(100%) invert(0%);
+    opacity: 0.86;
+  }
+}
+
+.device-name {
+  flex: 1;
+  min-width: 0;
+  height: 20px;
+  font-family: "HONOR Sans Design";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0em;
+  font-variation-settings: "opsz" auto;
+  font-feature-settings: "kern" on;
+  color: var(--bt-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.device-battery {
+  font-size: 11px;
+  color: var(--bt-text-muted);
+  font-weight: 400;
+}
+
+.device-item.device-connected .device-battery {
+  color: var(--bt-accent);
+}
+
+/* ========== 加载动画 ========== */
+.loading-spinner {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+  display: block;
+  color: var(--bt-text);
+  animation: bluetooth-spin 1.2s linear infinite;
+  transform-origin: 50% 50%;
+  margin-left: 8px;
+}
+
+.loading-spinner-dot {
+  position: absolute;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+/* 12 dots – positions/sizes per spec (container 16x16) */
+.loading-spinner-dot.dot-1 { left: 7.49px; top: 0px; width: 7.59%; height: 7.69%; opacity: 0.18; }
+.loading-spinner-dot.dot-2 { left: 11.14px; top: 1.03px; width: 7.59%; height: 7.69%; opacity: 0.18; }
+.loading-spinner-dot.dot-3 { left: 13.77px; top: 3.49px; width: 7.59%; height: 7.69%; opacity: 0.18; }
+.loading-spinner-dot.dot-4 { left: 14.79px; top: 7.18px; width: 7.59%; height: 7.69%; opacity: 0.18; }
+.loading-spinner-dot.dot-5 { left: 13.77px; top: 10.67px; width: 7.59%; height: 7.69%; opacity: 0.18; }
+.loading-spinner-dot.dot-6 { left: 10.94px; top: 13.33px; width: 10.13%; height: 10.26%; opacity: 0.22; }
+.loading-spinner-dot.dot-7 { left: 7.29px; top: 13.95px; width: 12.66%; height: 12.82%; opacity: 0.4; }
+.loading-spinner-dot.dot-8 { left: 3.44px; top: 12.92px; width: 15.19%; height: 15.38%; opacity: 0.5; }
+.loading-spinner-dot.dot-9 { left: 0.81px; top: 10.05px; width: 16.46%; height: 16.67%; opacity: 0.6; }
+.loading-spinner-dot.dot-10 { left: 0px; top: 6.77px; width: 13.92%; height: 14.1%; opacity: 0.37; }
+.loading-spinner-dot.dot-11 { left: 1.42px; top: 3.49px; width: 7.59%; height: 7.69%; opacity: 0.22; }
+.loading-spinner-dot.dot-12 { left: 4.05px; top: 1.03px; width: 7.59%; height: 7.69%; opacity: 0.22; }
+
+@keyframes bluetooth-spin { to { transform: rotate(360deg); } }
+
+/* ========== 勾选标记 ========== */
+.checkmark {
+  color: var(--bt-accent);
+  font-weight: bold;
+  margin-left: 8px;
+  font-size: 14px;
+  background-color: rgba(61, 127, 255, 0.1);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== 电池信息显示 ========== */
+.device-battery-info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+}
+
+.battery-percentage {
+  font-size: 13px;
+  color: var(--bt-text-muted);
+  font-weight: 500;
+}
+
+.battery-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+}
+
+/* ========== 断开连接弹框 ========== */
+.bluetooth-disconnect-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 120px;
+  border-radius: 12px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  background: var(--bt-surface);
+  border: 1px solid var(--bt-divider);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
+  color: var(--bt-text);
+  z-index: 1000;
+}
+
+/* 头部区域 - 蓝牙图标和设备名称 */
+.disconnect-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.disconnect-modal-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  .disconnect-modal-icon {
+    filter: brightness(0) invert(0);
+  }
+}
+
+.disconnect-modal-device-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--bt-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 底部按钮区域 */
+.disconnect-modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+/* 按钮基础样式 */
+.disconnect-btn {
+  position: static;
+  height: 36px;
+  border-radius: 18px;
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 4px;
+  flex-grow: 1;
+  background: var(--bt-action-btn-bg);
+  border: none;
+  cursor: pointer;
+  font-family: "HONOR Sans Design", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bt-accent);
+  transition: background 0.2s ease;
+}
+
+.disconnect-btn:hover {
+  background: var(--bt-action-btn-bg-hover);
+}
+
+/* 取消按钮 */
+.disconnect-btn-cancel {
+  color: var(--bt-accent);
+}
+
+/* 断开连接按钮 */
+.disconnect-btn-disconnect {
+  color: var(--bt-accent);
+}
+
+/* 连接按钮 */
+.disconnect-btn-connect {
+  color: var(--bt-accent);
+}
+
+/* 取消配对按钮 */
+.disconnect-btn-forget {
+  color: var(--bt-accent);
+}
+
+.disconnect-btn-forget:hover {
+  background: var(--bt-action-btn-bg-hover);
+}
+
+/* ========== 配对弹框样式 ========== */
+.pairing-modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 120px;
+  border-radius: 12px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--bt-surface);
+  border: 1px solid var(--bt-divider);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
+  color: var(--bt-text);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* 带配对码的弹框尺寸 */
+.pairing-modal-container.has-pin {
+  height: 180px;
+}
+
+.pairing-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.pairing-modal-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  .pairing-modal-icon {
+    filter: brightness(0) invert(0);
+  }
+}
+
+.pairing-modal-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--bt-text);
+}
+
+.pairing-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.pairing-loading {
+  font-size: 14px;
+  color: var(--bt-text-muted);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* 确认配对文字 */
+.pairing-confirm-text {
+  font-size: 14px;
+  color: var(--bt-text);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* PIN码标签 */
+.pairing-pin-label {
+  font-size: 13px;
+  color: var(--bt-text-muted);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.pairing-pin-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.pin-code-large {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--bt-text);
+  letter-spacing: 0;
+}
+
+.pairing-credential-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pairing-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bt-action-btn-bg);
+  border: 1px solid var(--bt-divider);
+  border-radius: 8px;
+  color: var(--bt-text);
+  font-size: 14px;
+  outline: none;
+}
+
+.pairing-input:focus {
+  border-color: var(--bt-accent);
+}
+
+.pairing-input::placeholder {
+  color: var(--bt-text-muted);
+}
+
+.pairing-modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.pairing-btn {
+  position: static;
+  height: 36px;
+  border-radius: 18px;
+  opacity: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 4px;
+  flex-grow: 1;
+  background: var(--bt-action-btn-bg);
+  border: none;
+  cursor: pointer;
+  font-family: "HONOR Sans Design", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--bt-accent);
+  transition: background 0.2s ease;
+}
+
+.pairing-btn:hover {
+  background: var(--bt-action-btn-bg-hover);
+}
+
+.pairing-btn-confirm {
+  background: var(--bt-accent);
+  color: #ffffff;
+}
+
+.pairing-btn-confirm:hover {
+  background: var(--bt-accent-hover);
+}
+
+.pairing-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== 配对失败弹框 ========== */
+.pairing-failed-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 206px;
+  padding: 20px;
+  background: var(--bt-surface);
+  border: 1px solid var(--bt-divider);
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
+  z-index: 1100;
+  color: var(--bt-text);
+  box-sizing: border-box;
+}
+
+.pairing-failed-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+
+.pairing-failed-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  .pairing-failed-icon {
+    filter: brightness(0) invert(0);
+  }
+}
+
+.pairing-failed-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--bt-text);
+}
+
+.pairing-failed-content {
+  color: var(--bt-text);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.pairing-failed-button {
+  width: 100%;
+  height: 36px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--bt-accent);
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  .pairing-failed-button {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.pairing-failed-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .pairing-failed-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}

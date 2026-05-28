@@ -1,0 +1,86 @@
+/* ===== Shortcut 本体 ===== */
+
+.shortcut-module {
+    width: 36px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+     
+    transform: scale(1);
+    filter: brightness(1);
+    opacity: 1;
+  
+    transition:
+      transform 300ms ease,
+      filter 300ms ease,
+      opacity 300ms ease,
+      background-color 0.2s ease,
+      border-radius 0.2s ease;
+    
+    border-radius: 12px;
+  }
+  
+  .shortcut-module:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .shortcut-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  
+  /* ===== Context Menu ===== */
+  
+  .shortcut-context-menu {
+    position: absolute;
+    width: 127px;
+    height: 40px;
+    z-index: 1000;
+  }
+  
+  .context-menu-outer {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: rgba(250, 251, 253, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(32px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.26);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .context-menu-inner {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 8px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 14px;
+    color: #000;
+  
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.15s ease;
+  }
+  
+  .context-menu-inner:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .shortcut-animate-in {
+    transform: scale(0.4);
+    filter: brightness(0.6);
+    opacity: 0.4;
+  }
+  

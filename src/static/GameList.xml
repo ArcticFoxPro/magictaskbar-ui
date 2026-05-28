@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Applications>
+  <Application name="英雄联盟">
+    <Process name="LeagueClientUxRender.exe"/>
+    <Process name="LeagueClientUx.exe"/>
+    <Process name="LeagueClient.exe"/>
+    <Process name="League of Legends.exe"/>
+  </Application>
+  <Application name="穿越火线">
+    <Process name="crossfire.exe"/>
+    <Process name="WebViewProcess_x64.exe"/>
+    <Process name="FeedBack.exe"/>
+  </Application>
+  <Application name="绝地求生">
+    <Process name="TslGame.exe"/>
+    <Process name="ExecPubg.exe"/>
+    <Process name="TslGame_BE.exe"/>
+  </Application>
+  <Application name="反恐精英">
+    <Process name="csgo.exe"/>
+    <Process name="cs2.exe"/>
+  </Application>
+  <Application name="yuanshen">
+    <Process name="YuanShen.exe"/>
+    <Process name="launcher.exe"/>
+    <Process name="Genshin Impact Cloud Game.exe"/>
+  </Application>
+  <Application name="星穹铁道">
+    <Process name="StarRail.exe"/>
+  </Application>
+  <Application name="逆战">
+    <Process name="TGame.exe"/>
+  </Application>
+  <Application name="Dota2">
+    <Process name="dota2.exe"/>
+  </Application>
+  <Application name="战争雷霆">
+    <Process name="aces.exe"/>
+  </Application>
+  <Application name="篮球在线">
+    <Process name="NBA2K23.exe"/>
+    <Process name="NBA2KOnline.exe"/>
+    <Process name="nba2k14.exe"/>
+    <Process name="NBA2K16.exe"/>
+    <Process name="NBA2K21.exe"/>
+    <Process name="NBA2K17.exe"/>
+    <Process name="NBA2K24.exe"/>
+  </Application>
+  <Application name="光环">
+    <Process name="HaloTheme.exe"/>
+    <Process name="HaloTray.exe"/>
+    <Process name="HaloSearch.exe"/>
+    <Process name="Halowp.exe"/>
+    <Process name="HaloInfinite.exe"/>
+  </Application>
+  <Application name="生死狙击">
+    <Process name="AirLobbyPreloader.exe"/>
+    <Process name="SSJJ_BattleClient_Unity.exe"/>
+  </Application>
+  <Application name="求生之路">
+    <Process name="left4dead.exe"/>
+  </Application>
+  <Application name="坦克世界">
+    <Process name="WorldOfTanks.exe"/>
+  </Application>
+  <Application name="星际战甲">
+    <Process name="Warframe.x64.exe"/>
+  </Application>
+  <Application name="QQ飞车">
+    <Process name="QQSpeed_loader.exe"/>
+    <Process name="GameApp.exe"/>
+  </Application>
+  <Application name="堡垒之夜">
+    <Process name="FortniteClient-Win64-Shipping.exe"/>
+    <Process name="FortniteClient-Win64-Shipping_BE.exe"/>
+    <Process name="FortniteClient-Win64-Shipping_EAC.exe"/>
+  </Application>
+  <Application name="泰拉瑞亚">
+    <Process name="Terraria.exe"/>
+  </Application>
+  <Application name="剑网三">
+    <Process name="JX3ClientX64.exe"/>
+  </Application>
+  <Application name="从军">
+    <Process name="enlisted.exe"/>
+  </Application>
+  <Application name="Apex Legends™">
+    <Process name="r5apex.exe"/>
+    <Process name="r5apex_dx12.exe"/>
+  </Application>
+  <Application name="FIFA">
+    <Process name="FIFA23.exe"/>
+  </Application>
+  <Application name="戴森球计划">
+    <Process name="Dyson Sphere Program.exe"/>
+    <Process name="DSPGAME.exe"/>
+  </Application>
+  <Application name="霍格沃茨之遗">
+    <Process name="HogwartsLegacy.exe"/>
+  </Application>
+  <Application name="木卫四协议">
+    <Process name="TheCallistoProtocol.exe"/>
+    <Process name="CallistoProtocol.exe"/>
+    <Process name="TCP.exe"/>
+  </Application>
+  <Application name="匹诺曹的谎言">
+    <Process name="LOP.exe"/>
+  </Application>
+  <Application name="全面战争 战锤3">
+    <Process name="TotalWarhammer3.exe"/>
+    <Process name="TWWarhammerIII.exe"/>
+    <Process name="Warhammer3.exe"/>
+  </Application>
+  <Application name="巫师3狂猎">
+    <Process name="witcher3.exe"/>
+  </Application>
+  <Application name="巫师2：国王刺客">
+    <Process name="witcher2.exe"/>
+  </Application>
+  <Application name="巫师">
+    <Process name="witcher1.exe"/>
+  </Application>
+  <Application name="最后生还者">
+    <Process name="TheLastOfUsPartI.exe"/>
+  </Application>
+  <Application name="瑞奇与叮当-时空跳转">
+    <Process name="RatchetAndClankRiftApart.exe"/>
+  </Application>
+  <Application name="无畏契约">
+    <Process name="VALORANT.exe"/>
+    <Process name="无畏契约登录器.exe"/>
+    <Process name="VALORANT-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="漫威蜘蛛侠：重制版">
+    <Process name="MarvelsSpiderManRemastered.exe"/>
+  </Application>
+  <Application name="极品飞车">
+    <Process name="NeedForSpeedHeat.exe"/>
+  </Application>
+  <Application name="七日杀">
+    <Process name="7DaysToDie.exe"/>
+    <Process name="7dLauncher.exe"/>
+    <Process name="7DaysToDie_EAC.exe"/>
+  </Application>
+  <Application name="仁王2">
+    <Process name="nioh2.exe"/>
+  </Application>
+  <Application name="暗区突围">
+    <Process name="UAGame.exe"/>
+  </Application>
+  <Application name="曙光">
+    <Process name="DyingLightGame.exe"/>
+  </Application>
+  <Application name="孤岛危机3">
+    <Process name="farcry3.exe"/>
+    <Process name="farcry3_d3d11.exe"/>
+  </Application>
+  <Application name="生化危机8：村庄">
+    <Process name="re8.exe"/>
+  </Application>
+  <Application name="迷你世界">
+    <Process name="MiniGameApp.exe"/>
+    <Process name="MicroMiniNew.exe"/>
+  </Application>
+  <Application name="侠盗猎车手5">
+    <Process name="GTA5.exe"/>
+    <Process name="GTAVLauncher.exe"/>
+    <Process name="PlayGTAV.exe"/>
+  </Application>
+  <Application name="地平线：零之曙光">
+    <Process name="HorizonZeroDawn.exe"/>
+  </Application>
+  <Application name="星球大战绝地：陨落的武士团">
+    <Process name="startwarsjedifallenorder.exe"/>
+  </Application>
+  <Application name="求生之路2">
+    <Process name="left4dead2.exe"/>
+  </Application>
+  <Application name="漫威复仇者">
+    <Process name="Avengers.exe"/>
+  </Application>
+  <Application name="逃生">
+    <Process name="outlastLauncher.exe"/>
+  </Application>
+  <Application name="生化危机2重置版">
+    <Process name="re2.exe"/>
+  </Application>
+  <Application name="极速骑行4">
+    <Process name="ride4.exe"/>
+  </Application>
+  <Application name="狙击精英4">
+    <Process name="SniperElite4_DX11.exe"/>
+    <Process name="SniperElite4_DX12.exe"/>
+  </Application>
+  <Application name="巫师3：狂猎">
+    <Process name="REDprelauncher.exe"/>
+  </Application>
+  <Application name="猎人:野性的呼唤">
+    <Process name="theHunterCotW_F.exe"/>
+  </Application>
+  <Application name="泰坦陨落2">
+    <Process name="Titanfall2.exe"/>
+    <Process name="Titanfall2_trial.exe"/>
+  </Application>
+  <Application name="幽灵行动:荒野">
+    <Process name="GRW.exe"/>
+    <Process name="rungane.exe"/>
+    <Process name="GRW_Upp.exe"/>
+  </Application>
+  <Application name="看门狗2">
+    <Process name="WatchDogs2.exe"/>
+  </Application>
+  <Application name="极品飞车：热度">
+    <Process name="EAC.exe"/>
+  </Application>
+  <Application name="无地之主3">
+    <Process name="Borderlands3.exe"/>
+  </Application>
+  <Application name="饥荒">
+    <Process name="dontstarve_rail.exe"/>
+    <Process name="dontstarve_steam.exe"/>
+  </Application>
+  <Application name="饥荒联机版">
+    <Process name="dontstarve_rail_x64.exe"/>
+    <Process name="dontstarve_steam_x64.exe"/>
+  </Application>
+  <Application name="Goose Goose Duck">
+    <Process name="Goose Goose Duck.exe"/>
+  </Application>
+  <Application name="炉石传说">
+    <Process name="Hearthstone.exe"/>
+  </Application>
+  <Application name="逆水寒">
+    <Process name="GacRunnerNG.exe"/>
+    <Process name="nshm.exe"/>
+  </Application>
+  <Application name="战舰世界">
+    <Process name="WorldOfWarships64.exe"/>
+  </Application>
+  <Application name="战机世界">
+    <Process name="WorldOfWarplanes.exe"/>
+  </Application>
+  <Application name="实况足球2021">
+    <Process name="PES2021.exe"/>
+  </Application>
+  <Application name="篮球在线2">
+    <Process name="NBA2KOL2.exe"/>
+  </Application>
+  <Application name="我的世界">
+    <Process name="Minecraft.exe"/>
+    <Process name="MINECRAFT.WINDOWS.EXE"/>
+  </Application>
+  <Application name="双人成行">
+    <Process name="ItTakesTwo.exe"/>
+  </Application>
+  <Application name="只狼">
+    <Process name="sekiro.exe"/>
+  </Application>
+  <Application name="怪物猎人世界">
+    <Process name="MonsterHunterWorld.exe"/>
+  </Application>
+  <Application name="生死狙击2">
+    <Process name="hallclient.exe"/>
+  </Application>
+  <Application name="阴阳师">
+    <Process name="onmyoji.exe"/>
+  </Application>
+  <Application name="战地风云2042">
+    <Process name="BF2042.exe"/>
+  </Application>
+  <Application name="战术小队">
+    <Process name="SquadGame.exe"/>
+  </Application>
+  <Application name="钢铁雄心4">
+    <Process name="hoi4.exe"/>
+  </Application>
+  <Application name="怪物猎人崛起">
+    <Process name="MonsterHunterRise.exe"/>
+  </Application>
+  <Application name="明日方舟">
+    <Process name="MAA.exe"/>
+  </Application>
+  <Application name="魔兽世界">
+    <Process name="WowClassic.exe"/>
+    <Process name="wow.exe"/>
+    <Process name="WoW.exe"/>
+  </Application>
+  <Application name="逃离塔科夫">
+    <Process name="EscapeFromTarkov.exe"/>
+  </Application>
+  <Application name="文明六">
+    <Process name="CivilizationVI_DX12.exe"/>
+    <Process name="CivilizationVI.exe"/>
+    <Process name="t2gp.exe"/>
+  </Application>
+  <Application name="消逝的光芒">
+    <Process name="DyingLightGame_x64_rwdi.exe"/>
+  </Application>
+  <Application name="拳皇15">
+    <Process name="KOFXV-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="全面战争:三国">
+    <Process name="Three_Kingdoms.exe"/>
+  </Application>
+  <Application name="游戏启动器">
+    <Process name="GameLoader.exe"/>
+    <Process name="EADesktop.exe"/>
+  </Application>
+  <Application name="flash中心小游戏">
+    <Process name="FCBrowser.exe"/>
+    <Process name="FCBrowserManager.exe"/>
+  </Application>
+  <Application name="植物大战僵尸">
+    <Process name="PlantsVsZombies.exe"/>
+    <Process name="popcapgame1.exe"/>
+  </Application>
+  <Application name="SocialClub游戏">
+    <Process name="SocialClubHelper.exe"/>
+  </Application>
+  <Application name="我的世界启动器">
+    <Process name="WPFLauncher.exe"/>
+  </Application>
+  <Application name="星露谷物语">
+    <Process name="Stardew Valley.exe"/>
+    <Process name="StardewModdingAPI.exe"/>
+  </Application>
+  <Application name="木筏求生启动器">
+    <Process name="Plain Craft Launcher 2.exe"/>
+  </Application>
+  <Application name="地下城与勇士：创新世纪">
+    <Process name="DNF.exe"/>
+  </Application>
+  <Application name="P社启动器">
+    <Process name="Paradox Launcher.exe"/>
+  </Application>
+  <Application name="魔兽争霸3：冰封王座">
+    <Process name="war3.exe"/>
+  </Application>
+  <Application name="梦幻西游">
+    <Process name="my.exe"/>
+    <Process name="mhtab.exe"/>
+    <Process name="mhmain.exe"/>
+  </Application>
+  <Application name="胡闹厨房">
+    <Process name="Overcooked2.exe"/>
+  </Application>
+  <Application name="模拟人生">
+    <Process name="TS4_x64.exe"/>
+  </Application>
+  <Application name="英勇之地">
+    <Process name="HerosLand.exe"/>
+  </Application>
+  <Application name="女神异闻录5">
+    <Process name="P5R.exe"/>
+  </Application>
+  <Application name="以撒的结合">
+    <Process name="isaac-ng.exe"/>
+  </Application>
+  <Application name="大话西游">
+    <Process name="xy2_tab.exe"/>
+  </Application>
+  <Application name="失落的方舟">
+    <Process name="LOSTARK.exe"/>
+  </Application>
+  <Application name="俄罗斯钓鱼">
+    <Process name="rf4_x64.exe"/>
+  </Application>
+  <Application name="三国杀">
+    <Process name="Sgsc10th.exe"/>
+    <Process name="SGSOL.exe"/>
+  </Application>
+  <Application name="剑灵">
+    <Process name="BNSR.exe"/>
+  </Application>
+  <Application name="崩坏3">
+    <Process name="BH3.exe"/>
+  </Application>
+  <Application name="足球经理">
+    <Process name="fm.exe"/>
+  </Application>
+  <Application name="冒险岛">
+    <Process name="MapleStory.exe"/>
+  </Application>
+  <Application name="空洞骑士">
+    <Process name="hollow_knight.exe"/>
+  </Application>
+  <Application name="倩女幽魂">
+    <Process name="qnyh.exe"/>
+  </Application>
+  <Application name="明日之后">
+    <Process name="lifeafter.exe"/>
+  </Application>
+  <Application name="星际争霸II">
+    <Process name="SC2_x64.exe"/>
+  </Application>
+  <Application name="QQ炫舞">
+    <Process name="qqx51_game.exe"/>
+  </Application>
+  <Application name="木筏求生">
+    <Process name="Raft.exe"/>
+    <Process name="netcraft.exe"/>
+    <Process name="CDRAFT_M.exe"/>
+  </Application>
+  <Application name="辐射四">
+    <Process name="Fallout4.exe"/>
+  </Application>
+  <Application name="致命公司">
+    <Process name="Lethal Company.exe"/>
+  </Application>
+  <Application name="黎明杀机">
+    <Process name="DeadByDaylight-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="天命2">
+    <Process name="destiny2.exe"/>
+  </Application>
+  <Application name="上古卷轴">
+    <Process name="SkyrimSE.exe"/>
+  </Application>
+  <Application name="哈迪斯">
+    <Process name="Hades.exe"/>
+  </Application>
+  <Application name="欢乐麻将">
+    <Process name="HLMJ.exe"/>
+  </Application>
+  <Application name="欧洲卡车模拟">
+    <Process name="eurotrucks2.exe"/>
+  </Application>
+  <Application name="背包战争：福西法的宝藏">
+    <Process name="BackpackBattles.exe"/>
+  </Application>
+  <Application name="三国志">
+    <Process name="san11pk.exe"/>
+    <Process name="SAN14PK_SC.exe"/>
+  </Application>
+  <Application name="鬼谷八荒">
+    <Process name="guigubahuang.exe"/>
+  </Application>
+  <Application name="荒野行动">
+    <Process name="hyxd.exe"/>
+  </Application>
+  <Application name="造梦西游">
+    <Process name="zmxy_online.exe"/>
+  </Application>
+  <Application name="死亡细胞">
+    <Process name="deadcells.exe"/>
+  </Application>
+  <Application name="欧陆风云4">
+    <Process name="eu4.exe"/>
+  </Application>
+  <Application name="英雄无敌">
+    <Process name="Heroes3.exe"/>
+  </Application>
+  <Application name="暗黑地牢">
+    <Process name="Darkest.exe"/>
+  </Application>
+  <Application name="群星">
+    <Process name="stellaris.exe"/>
+  </Application>
+  <Application name="幻塔">
+    <Process name="QRSL.exe"/>
+  </Application>
+  <Application name="完美世界">
+    <Process name="elementclient.exe"/>
+    <Process name="elementclient64.exe"/>
+  </Application>
+  <Application name="森林">
+    <Process name="TheForest.exe"/>
+  </Application>
+  <Application name="战神4">
+    <Process name="GoW.exe"/>
+  </Application>
+  <Application name="森林之子">
+    <Process name="SonsOfTheForest.exe"/>
+  </Application>
+  <Application name="暗黑4">
+    <Process name="Diablo IV.exe"/>
+  </Application>
+  <Application name="鸣潮">
+    <Process name="Client-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="正当防卫">
+    <Process name="JustCause3.exe"/>
+    <Process name="JustCause4.exe"/>
+  </Application>
+  <Application name="了不起的修仙模拟器">
+    <Process name="Amazing Cultivation Simulator.exe"/>
+  </Application>
+  <Application name="天国拯救">
+    <Process name="KingdomCome.exe"/>
+  </Application>
+  <Application name="神力科莎">
+    <Process name="acs.exe"/>
+  </Application>
+  <Application name="三角洲行动">
+    <Process name="DeltaForceClient-Win64-Shipping.exe"/>
+    <Process name="delta_force_launcher.exe"/>
+  </Application>
+  <Application name="兰博电竞全屏游戏">
+    <Process name="gamemd-spawn.exe"/>
+  </Application>
+  <Application name="滑雪">
+    <Process name="steep.exe"/>
+  </Application>
+  <Application name="绝区零">
+    <Process name="ZenlessZoneZero.exe"/>
+  </Application>
+  <Application name="无限暖暖">
+    <Process name="X6Game-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="咩咩启示录">
+    <Process name="Cult Of The Lamb.exe"/>
+  </Application>
+  <Application name="龙之谷">
+    <Process name="dragonnest_reborn.exe"/>
+  </Application>
+  <Application name="蜡笔小新：煤炭镇的小白">
+    <Process name="Shin chan Shiro and the Coal Town.exe"/>
+  </Application>
+  <Application name="缺氧">
+    <Process name="OxygenNotIncluded.exe"/>
+  </Application>
+  <Application name="奥日与精灵意志">
+    <Process name="oriwotw.exe"/>
+  </Application>
+  <Application name="毁灭战士">
+    <Process name="DOOMX64.EXE"/>
+  </Application>
+  <Application name="盗贼传奇合集">
+    <Process name="u4.exe"/>
+  </Application>
+  <Application name="界外狂潮">
+    <Process name="FragPunk.exe"/>
+  </Application>
+  <Application name="火炬之光">
+    <Process name="torchlight_infinite.exe"/>
+  </Application>
+  <Application name="明日方舟:终末地">
+    <Process name="Endfield.exe"/>
+  </Application>
+  <Application name="三角洲行动:黑鹰坠落">
+    <Process name="BHDClient-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="Cyberpunk 2077">
+    <Process name="Cyberpunk2077.exe"/>
+  </Application>
+  <Application name="荒野大镖客2">
+    <Process name="RDR2.exe"/>
+  </Application>
+  <Application name="守望先锋">
+    <Process name="Overwatch.exe"/>
+  </Application>
+  <Application name="艾尔登法环">
+    <Process name="eldenring.exe"/>
+  </Application>
+  <Application name="博德之门3">
+    <Process name="bg3.exe"/>
+    <Process name="bg3_dx11.exe"/>
+  </Application>
+  <Application name="幻兽帕鲁">
+    <Process name="Palworld.exe"/>
+    <Process name="Palworld-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="最终幻想15">
+    <Process name="ffxv.exe"/>
+    <Process name="ffxvbench.exe"/>
+  </Application>
+  <Application name="地铁离去">
+    <Process name="MetroExodus.exe"/>
+    <Process name="Benmark.exe"/>
+  </Application>
+  <Application name="孤岛惊魂5">
+    <Process name="FarCry5.exe"/>
+  </Application>
+  <Application name="黑神话.悟空">
+    <Process name="b1.exe"/>
+    <Process name="b1-Win64-Shipping.exe"/>
+    <Process name="b1_benchmark.exe"/>
+  </Application>
+  <Application name="极限竞速：地平线4">
+    <Process name="ForzaHorizon4.exe"/>
+  </Application>
+  <Application name="古墓丽影暗影">
+    <Process name="SOTTR.exe"/>
+  </Application>
+  <Application name="古墓丽影崛起">
+    <Process name="ROTTR.exe"/>
+  </Application>
+  <Application name="古墓丽影9">
+    <Process name="TombRaider.exe"/>
+  </Application>
+  <Application name="使命召唤">
+    <Process name="h1_sp64_ship.exe"/>
+  </Application>
+  <Application name="使命召唤19：现代战争2">
+    <Process name="Call_of_Duty_Modern_Warfare_2.exe"/>
+    <Process name="CODMW2.exe"/>
+    <Process name="ModernWarfare2.exe"/>
+    <Process name="cod22-cod.exe"/>
+  </Application>
+  <Application name="使命召唤14">
+    <Process name="s2_sp64_ship.exe"/>
+  </Application>
+  <Application name="使命召唤7：黑色行动">
+    <Process name="BlackOps.exe"/>
+  </Application>
+  <Application name="使命召唤4：现代战争">
+    <Process name="ModernWarfare.exe"/>
+  </Application>
+  <Application name="使命召唤17">
+    <Process name="BlackOpsColdWar.exe"/>
+  </Application>
+  <Application name="使命召唤8">
+    <Process name="iw5sp.exe"/>
+  </Application>
+  <Application name="使命召唤11：高级战争">
+    <Process name="s1_sp64_ship.exe"/>
+  </Application>
+  <Application name="使命召唤10：幽灵">
+    <Process name="iw6sp64_ship.exe"/>
+  </Application>
+  <Application name="战地">
+    <Process name="bf1.exe"/>
+    <Process name="ravenfield.exe"/>
+  </Application>
+  <Application name="战地5">
+    <Process name="bfv.exe"/>
+    <Process name="bfvTrial.exe"/>
+  </Application>
+  <Application name="彩虹六号：围攻">
+    <Process name="RainbowSix.exe"/>
+  </Application>
+  <Application name="城市天际线">
+    <Process name="Cities.exe"/>
+  </Application>
+  <Application name="城市天际线2">
+    <Process name="Cities2.exe"/>
+  </Application>
+  <Application name="刺客信条：兄弟会">
+    <Process name="ACBSP.exe"/>
+    <Process name="ACBMP.exe"/>
+    <Process name="AssassinsCreedBrotherhood.exe"/>
+  </Application>
+  <Application name="刺客信条2">
+    <Process name="AssassinsCreedII.exe"/>
+  </Application>
+  <Application name="刺客信条3">
+    <Process name="ACIII.exe"/>
+    <Process name="ACLiberation.exe"/>
+  </Application>
+  <Application name="刺客信条奥德赛">
+    <Process name="ACOdyssey.exe"/>
+  </Application>
+  <Application name="刺客信条:启示录">
+    <Process name="ACRPR.exe"/>
+    <Process name="ACRSP.exe"/>
+    <Process name="AssassinsCreedRevelations.exe"/>
+  </Application>
+  <Application name="刺客信条：英灵殿">
+    <Process name="ACValhalla.exe"/>
+    <Process name="ACValhalla_Plus.exe"/>
+  </Application>
+  <Application name="刺客信条：起源">
+    <Process name="ACOrigins.exe"/>
+  </Application>
+  <Application name="刺客信条：大革命">
+    <Process name="ACU.exe"/>
+  </Application>
+  <Application name="最终幻想14">
+    <Process name="ffxiv_dx11.exe"/>
+  </Application>
+  <Application name="地平线5">
+    <Process name="ForzaHorizon5.exe"/>
+  </Application>
+  <Application name="永劫无间">
+    <Process name="LootHoarder.exe"/>
+    <Process name="NeacClient.exe"/>
+    <Process name="NarakaBladepoint.exe"/>
+  </Application>
+  <Application name="最终幻想7">
+    <Process name="ff7remake_.exe"/>
+  </Application>
+  <Application name="燕云十六声">
+    <Process name="yysls.exe"/>
+  </Application>
+  <Application name="双影奇境">
+    <Process name="SplitFiction.exe"/>
+  </Application>
+  <Application name="漫威争锋">
+    <Process name="Marvel-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="怪物猎人荒野">
+    <Process name="MonsterHunterWilds.exe"/>
+  </Application>
+  <Application name="底特律变人">
+    <Process name="DetroitBecomeHuman.exe"/>
+  </Application>
+  <Application name="GTA5增强版 ">
+    <Process name="GTA5_Enhanced.exe"/>
+  </Application>
+  <Application name="剑星 ">
+    <Process name="SB-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="明末：渊虚之羽">
+    <Process name="Project_Plague-Win64-Shipping.exe"/>
+    <Process name="Project_Plague.exe"/>
+  </Application>
+  <Application name="流放之路2">
+    <Process name="PathOfExile_x64.exe"/>
+  </Application>
+  <Application name="最后生还者">
+    <Process name="tlou-i.exe"/>
+  </Application>
+  <Application name="洛克王国：世界">
+    <Process name="NRC-Win64-Shipping.exe"/>
+    <Process name="NRC.exe"/>
+  </Application>
+  <Application name="王者荣耀世界">
+    <Process name="NGR-Win64-Shipping.exe"/>
+  </Application>
+  <Application name="暗黑2">
+    <Process name="D2R.EXE"/>
+  </Application>
+  <Application name="魔兽世界">
+    <Process name="BIGFOOT-WOW.EXE"/>
+    <Process name="WARCRAFT III.EXE"/>
+  </Application>
+  <Application name="Gamepp">
+    <Process name="GPP_PCAWAKEN.EXE"/>
+  </Application>
+  <Application name="和平精英PC模拟器">
+    <Process name="HPJYHD.EXE"/>
+  </Application>
+  <Application name="穿越火线">
+    <Process name="CFHD-THE10THZONE.EXE"/>
+    <Process name="CFHD高清竞技大区卸载.EXE"/>
+    <Process name="LAUNCHCROSSFIRE.EXE"/>
+  </Application>
+  <Application name="PROJECT M">
+    <Process name="WGPROJECTM.EXE"/>
+  </Application>
+  <Application name="逃离鸭科夫">
+    <Process name="DUCKOV.EXE"/>
+  </Application>
+  <Application name="伊卡洛斯">
+    <Process name="ICARUS_UI.EXE"/>
+  </Application>
+  <Application name="边狱公司">
+    <Process name="LIMBUSCOMPANY.EXE"/>
+  </Application>
+  <Application name="动物派对">
+    <Process name="PARTYANIMALS.EXE"/>
+  </Application>
+  <Application name="方舟生存进化">
+    <Process name="SHOOTERGAME.EXE"/>
+  </Application>
+  <Application name="星际争霸">
+    <Process name="STARCRAFT II.EXE"/>
+    <Process name="STARCRAFT.EXE"/>
+  </Application>
+  <Application name="十字军之王3">
+    <Process name="CK3.EXE"/>
+  </Application>
+  <Application name="潜水员戴夫">
+    <Process name="DAVETHEDIVER.EXE"/>
+  </Application>
+  <Application name="第五人格手游模拟器">
+    <Process name="DWRG.EXE"/>
+  </Application>
+  <Application name="杀手3">
+    <Process name="HITMAN3.EXE"/>
+  </Application>
+  <Application name="雀神麻将">
+    <Process name="JANTAMA_MAHJONGSOUL.EXE"/>
+  </Application>
+  <Application name="小小梦魇2">
+    <Process name="LITTLE NIGHTMARES II.EXE"/>
+    <Process name="LITTLE_NIGHTMARES_II_ENHANCED-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="生化危机4">
+    <Process name="RE4.EXE"/>
+  </Application>
+  <Application name="光与影：33号远征队">
+    <Process name="SANDFALL-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="XboxXbox">
+    <Process name="XBOXPCAPPFT.EXE"/>
+  </Application>
+  <Application name="骑士Online">
+    <Process name="3DMARKNIGHTRAID.EXE"/>
+    <Process name="KNIGHTV.EXE"/>
+  </Application>
+  <Application name="管制后室">
+    <Process name="BACKROOMS-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="骑马与砍杀2：霸主">
+    <Process name="BANNERLORD.EXE"/>
+  </Application>
+  <Application name="BeamNG.drive">
+    <Process name="BEAMNG.DRIVE.X64.EXE"/>
+  </Application>
+  <Application name="嗜血印">
+    <Process name="BLOODYSPELL.EXE"/>
+  </Application>
+  <Application name="土豆兄弟">
+    <Process name="BROTATO.EXE"/>
+  </Application>
+  <Application name="卡拉彼丘">
+    <Process name="CALABIYAU-WIN64-SHIPPING.EXE"/>
+    <Process name="CALABIYAU.EXE"/>
+  </Application>
+  <Application name="爬宠齐上阵">
+    <Process name="CLIMBER ANIMALS TOGETHER.EXE"/>
+  </Application>
+  <Application name="反恐精英">
+    <Process name="CSTRIKE.EXE"/>
+  </Application>
+  <Application name="黎明杀机">
+    <Process name="DEADBYDAYLIGHT.EXE"/>
+  </Application>
+  <Application name="鬼泣5">
+    <Process name="DEVILMAYCRY5.EXE"/>
+  </Application>
+  <Application name="暗黑破坏神3">
+    <Process name="DIABLO III64.EXE"/>
+  </Application>
+  <Application name="逃离塔科夫">
+    <Process name="ESCAPEFROMTARKOV_BE.EXE"/>
+  </Application>
+  <Application name="孤岛惊魂6">
+    <Process name="FARCRY6.EXE"/>
+  </Application>
+  <Application name="FC Online">
+    <Process name="FCZF.EXE"/>
+  </Application>
+  <Application name="空洞骑士：丝之歌">
+    <Process name="HOLLOW KNIGHT SILKSONG.EXE"/>
+  </Application>
+  <Application name="人类一败涂地 / Human Fall Flat">
+    <Process name="HUMAN.EXE"/>
+  </Application>
+  <Application name="逸剑风云决">
+    <Process name="JH-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="KARDS卡牌游戏">
+    <Process name="KARDS-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="NBA2K25">
+    <Process name="NBA2K25.EXE"/>
+  </Application>
+  <Application name="胜利女神">
+    <Process name="NIKKE.EXE"/>
+  </Application>
+  <Application name="scpsl">
+    <Process name="SCPSL.EXE"/>
+  </Application>
+  <Application name="棘罪修女伊妮莎">
+    <Process name="THORNSIN.EXE"/>
+  </Application>
+  <Application name="绝地求生">
+    <Process name="TSLGAME_ZK.EXE"/>
+  </Application>
+  <Application name="维多利亚">
+    <Process name="VICTORIA3.EXE"/>
+  </Application>
+  <Application name="艾尔之光">
+    <Process name="X2.EXE"/>
+  </Application>
+  <Application name="绝区零-云游戏">
+    <Process name="ZENLESS ZONE ZERO CLOUD.EXE"/>
+  </Application>
+  <Application name="帝国时代2征服者">
+    <Process name="AGE2_X1.EXE"/>
+  </Application>
+  <Application name="帝国时代2">
+    <Process name="AOE2DE_S.EXE"/>
+  </Application>
+  <Application name="无限方舟">
+    <Process name="ARK MOBIUS.EXE"/>
+  </Application>
+  <Application name="家犬勇者与魔王之城">
+    <Process name="A LOSE HERO IN THE CASTLE OF THE SUCCUBI.EXE"/>
+  </Application>
+  <Application name="蝙蝠侠阿卡姆骑士">
+    <Process name="BATMANAK.EXE"/>
+  </Application>
+  <Application name="颂钟长鸣">
+    <Process name="BELLWRIGHTGAME-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="围攻Besiege">
+    <Process name="BESIEGE.EXE"/>
+  </Application>
+  <Application name="使命召唤">
+    <Process name="CALL.OF.DUTY.GHOSTS.CHS-CHT.V5.0-ALI213.EXE"/>
+  </Application>
+  <Application name="方舟">
+    <Process name="DARKTIDE.EXE"/>
+  </Application>
+  <Application name="死亡边境">
+    <Process name="DEADFRONTIER2.EXE"/>
+  </Application>
+  <Application name="死亡岛">
+    <Process name="DEADISLAND-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="死亡搁浅">
+    <Process name="DEATHSTRANDING.EXE"/>
+  </Application>
+  <Application name="尘埃拉力赛">
+    <Process name="DIRTRALLY2.EXE"/>
+  </Application>
+  <Application name="易红2">
+    <Process name="EASY RED 2.EXE"/>
+  </Application>
+  <Application name="实况足球Online">
+    <Process name="EFOOTBALLONLINE.EXE"/>
+  </Application>
+  <Application name="永恒世界">
+    <Process name="ETERNUM.EXE"/>
+  </Application>
+  <Application name="辐射">
+    <Process name="FALLOUTNV.EXE"/>
+  </Application>
+  <Application name="微软模拟飞行">
+    <Process name="FLIGHTSIMULATOR.EXE"/>
+  </Application>
+  <Application name="魔兽争霸Ⅲ：冰封王座">
+    <Process name="FROZEN THRONE.EXE"/>
+  </Application>
+  <Application name="传奇-服务器端">
+    <Process name="GAMECENTER.EXE"/>
+  </Application>
+  <Application name="原神">
+    <Process name="GENSHIN WISH EXPORT.EXE"/>
+  </Application>
+  <Application name="花园战争2">
+    <Process name="GW2.MAIN_WIN64_RETAIL.EXE"/>
+  </Application>
+  <Application name="hero">
+    <Process name="HERO.EXE"/>
+  </Application>
+  <Application name="英雄无敌">
+    <Process name="HEROES3 HD.EXE"/>
+    <Process name="HEROES_X64.EXE"/>
+  </Application>
+  <Application name="杀手2">
+    <Process name="HITMAN2.EXE"/>
+  </Application>
+  <Application name="无限暖暖">
+    <Process name="INFINITYNIKKI.EXE"/>
+  </Application>
+  <Application name="侏罗纪世界：进化2">
+    <Process name="JWE2.EXE"/>
+  </Application>
+  <Application name="王国保卫战">
+    <Process name="KINGDOM RUSH ORIGINS.EXE"/>
+  </Application>
+  <Application name="废墟图书馆">
+    <Process name="LIBRARYOFRUINA.EXE"/>
+  </Application>
+  <Application name="小小噩梦">
+    <Process name="LITTLENIGHTMARES.EXE"/>
+  </Application>
+  <Application name="四海兄弟">
+    <Process name="MAFIA3DEFINITIVEEDITION.EXE"/>
+    <Process name="MAFIA II DEFINITIVE EDITION.EXE"/>
+  </Application>
+  <Application name="游戏王决斗大师">
+    <Process name="MASTERDUEL.EXE"/>
+  </Application>
+  <Application name="解限机">
+    <Process name="MECHABREAK.EXE"/>
+  </Application>
+  <Application name="地铁">
+    <Process name="METRO.EXE"/>
+  </Application>
+  <Application name="生化危机2：重制版">
+    <Process name="MK11.EXE"/>
+    <Process name="MK11_DX12.EXE"/>
+  </Application>
+  <Application name="英雄无敌7">
+    <Process name="MMH7GAME-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="喵斯快跑">
+    <Process name="MUSEDASH.EXE"/>
+  </Application>
+  <Application name="使命召唤6：现代战争2">
+    <Process name="MW2CR.EXE"/>
+  </Application>
+  <Application name="猫郎乐园">
+    <Process name="NEKOPARA_EXTRA.EXE"/>
+    <Process name="NEKOPARA_VOL0.EXE"/>
+  </Application>
+  <Application name="极品飞车17：最高通缉">
+    <Process name="NFS13.EXE"/>
+  </Application>
+  <Application name="探灵笔记">
+    <Process name="NOTESOFSOUL-WIN64-SHIPPING.EXE"/>
+    <Process name="NOTESOFSOUL-WIN64-SHIPPING_BE.EXE"/>
+  </Application>
+  <Application name="火影忍者究极风暴">
+    <Process name="NSUNS4.EXE"/>
+    <Process name="NSUNSC.EXE"/>
+  </Application>
+  <Application name="萌猫公园">
+    <Process name="PICO_PARK.EXE"/>
+  </Application>
+  <Application name="战意">
+    <Process name="PROVEN_GROUND_CLIENT.EXE"/>
+  </Application>
+  <Application name="秘密邻居">
+    <Process name="PVZBATTLEFORNEIGHBORVILLE.EXE"/>
+  </Application>
+  <Application name="Roblox">
+    <Process name="ROBLOXPLAYERBETA.EXE"/>
+  </Application>
+  <Application name="三国志14">
+    <Process name="SAN14PK_TC.EXE"/>
+  </Application>
+  <Application name="人渣SCUM">
+    <Process name="SCUM.EXE"/>
+  </Application>
+  <Application name="秘密派">
+    <Process name="SECRETPIE.EXE"/>
+  </Application>
+  <Application name="只狼">
+    <Process name="SEKIRO SHADOWS DIE TWICE.PART1.EXE"/>
+  </Application>
+  <Application name="狙击手：幽灵战士契约（SGW Contracts 2）">
+    <Process name="SGWCONTRACTS.EXE"/>
+  </Application>
+  <Application name="师父">
+    <Process name="SIFU-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="狙击手">
+    <Process name="SNIPER5_DX12.EXE"/>
+  </Application>
+  <Application name="狙击精英">
+    <Process name="SNIPERELITE4.EXE"/>
+    <Process name="SNIPERELITE5.EXE"/>
+    <Process name="SNIPERELITEV2.EXE"/>
+  </Application>
+  <Application name="雪地奔驰">
+    <Process name="SNOWRUNNER.EXE"/>
+  </Application>
+  <Application name="太空引擎">
+    <Process name="SPACEENGINE.EXE"/>
+  </Application>
+  <Application name="腐烂国度">
+    <Process name="STATEOFDECAY2-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="超级兔子人">
+    <Process name="SUPER BUNNY MAN.EXE"/>
+  </Application>
+  <Application name="坦克营地">
+    <Process name="TANKCAMP.EXE"/>
+  </Application>
+  <Application name="伊德海拉之影">
+    <Process name="THE SHADOW OF YIDHRA.EXE"/>
+  </Application>
+  <Application name="神偷">
+    <Process name="THIEF.EXE"/>
+  </Application>
+  <Application name="暴雪战网">
+    <Process name="TOTALLYACCURATEBATTLESIMULATOR.EXE"/>
+  </Application>
+  <Application name="宝藏游戏">
+    <Process name="TROVE.EXE"/>
+  </Application>
+  <Application name="打字游戏">
+    <Process name="TYPEGAME.EXE"/>
+  </Application>
+  <Application name="无人机模拟器">
+    <Process name="UNCRASHED-WIN64-SHIPPING.EXE"/>
+  </Application>
+  <Application name="unturned">
+    <Process name="UNTURNED_BE.EXE"/>
+  </Application>
+  <Application name="看门狗">
+    <Process name="WATCHDOGSLEGION.EXE"/>
+  </Application>
+  <Application name="僵尸世界大战">
+    <Process name="WWZRETAILEGS.EXE"/>
+  </Application>
+  <Application name="象棋">
+    <Process name="XIANGQI.EXE"/>
+  </Application>
+  <Application name="大话西游">
+    <Process name="XY2_LAUNCH.EXE"/>
+  </Application>
+  <Application name="如龙">
+    <Process name="YAKUZALIKEADRAGON.EXE"/>
+  </Application>
+  <Application name="游戏王：大师决斗">
+    <Process name="YUGIOH.EXE"/>
+  </Application>
+  <Application name="全民来找茬">
+    <Process name="ZHAOCHA.EXE"/>
+  </Application>
+  <Application name="诛仙世界">
+    <Process name="ZXSJGAME.EXE"/>
+  </Application>
+</Applications>

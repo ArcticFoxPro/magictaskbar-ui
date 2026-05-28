@@ -1,0 +1,31 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "MagicTaskbar",
+  "identifier": "taskbarAndAIbar",
+  "version": "../package.json",
+  "app": {
+    "security": {
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$RESOURCE/**/*",
+          "$APPDATA/**/*",
+          "$LOCALDATA/**/*",
+          "**/*.{jpg,jpeg,png,webp,gif,ico}",
+          "$EXE_DIR/static/icons/**/*"
+        ]
+      }
+    }
+  },
+  "build": {
+    "beforeDevCommand": "npm run build:ui -- --serve",
+    "beforeBuildCommand": "npm run build:ui -- --production",
+    "devUrl": "http://localhost:35790",
+    "frontendDist": "../dist"
+  },
+  "bundle": {
+    "active": false,
+    "resources": ["static/**/*"],
+    "icon": ["static/icons/icon.ico"]
+  }
+}

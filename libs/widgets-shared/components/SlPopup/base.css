@@ -1,0 +1,14 @@
+.sl-popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: min-content;
+  height: min-content;
+  /* Start offscreen to avoid first-frame flash before positioning */
+  top: -10000px;
+  left: -10000px;
+
+  &.sl-popup-open {
+    display: block;
+  }
+}

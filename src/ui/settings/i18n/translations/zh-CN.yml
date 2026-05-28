@@ -1,0 +1,125 @@
+window:
+  title: 设置
+  minimize: 最小化
+  close: 关闭
+
+menu:
+  notification: 通知和状态栏
+  taskbar: 桌面与任务栏
+  puremode: 纯净系统
+  upgrade: 升级管理
+  privacy: 隐私权限
+
+toolbar:
+  always_show: 始终显示工具栏
+  smart_hide: 智能自动隐藏
+
+notification:
+  title: 通知和状态栏
+  toolbar_display: 工具栏显示
+  toolbar_desc: 控制工具栏在桌面上的显示方式
+
+taskbar:
+  title: 桌面与任务栏
+  section_taskbar: 任务栏
+  section_desktop: 桌面
+  zoom_effect: 任务栏放大效果
+  zoom_effect_desc: 鼠标悬停时放大任务栏图标
+  zoom_type: 放大效果类型
+  zoom_wave: 灵动波浪
+  zoom_single: 单点聚焦
+  icon_theme: 图标主题
+  icon_theme_default: 通透图标
+  icon_theme_blue: 蔚蓝晶域
+  backplate_transparent: 透明背板
+  backplate_white: 白色背板
+  minimize_animation: 最小化窗口动画
+  enable_animation: 启用动画
+  disable_animation: 禁用动画
+
+puremode:
+  title: 纯净系统
+  clean_mode: 纯净模式
+  clean_mode_desc: 开启纯净模式，减少系统资源占用
+  turn_on_pure_mode: 开启荣耀纯净系统
+  turn_off_pure_mode: 关闭荣耀纯净系统
+  clean_mode_declaration: 纯净模式声明
+  service_optimization: 服务体验优化
+  service_optimization_desc: 优化系统服务，提升性能
+  update_service_optimization: 更新服务优化
+  turn_on_service: 开启服务优化
+  turn_off_service: 关闭服务优化
+  idle_update: 闲时更新
+  idle_update_desc: 在系统空闲时自动更新
+  idle_update_magic: 闲时更新 Magic 视界版本（推荐开启）
+  browser_enhance: 浏览器搜索体验增强
+  browser_enhance_desc: 增强浏览器搜索体验
+  turn_on_browser_enhance: 开启浏览器搜索体验增强
+  turn_off_browser_enhance: 关闭浏览器搜索体验增强
+  third_party_control: 三方软件管控
+  third_party_control_desc: 管理第三方软件的启动和运行
+  app_startup: 开机自启管理
+  app_startup_desc: 管理开机自启动应用
+  view_details: 查看详情
+  apps_count: 个应用
+  software_control: 软件管控
+  third_party_desc: 对三方软件进行智能管控，带来纯净体验
+  startup_desc: 对开机自启软件进行智能管控，带来极速开机体验
+
+upgrade:
+  title: 升级管理
+  auto_upgrade: 自动升级
+  auto_upgrade_desc: 开启自动升级，保持应用最新
+  turn_on: 开启自动升级
+  turn_off: 关闭自动升级
+
+privacy:
+  title: 隐私权限
+  user_experience: 用户体验计划
+  other: 其他
+  permission_statement: 荣耀Magic视界应用权限说明
+  stop_service: 停止服务
+  agreement_declaration: 协议与声明
+  user_agreement: 用户协议
+  privacy_statement: 隐私声明
+  after_uninstall: 在您卸载荣耀Magic视界后，同意
+  and: 和
+  records_delete: 记录将立刻删除。
+
+popup:
+  confirm: 确认
+  cancel: 取消
+  stop_service_title: 停止服务
+  stop_service_desc: 点击"确认"即表示终止荣耀Magic视界应用用户协议。请注意，荣耀Magic视界将无法继续为您提供服务，并将停止处理您的相关信息。
+third_party:
+  title: 三方软件管控
+  back: 返回
+  disable_all: 全部禁用
+  enable_all: 全部启用
+  disabled: 已禁用
+  enabled: 已启用
+  categories:
+    word_selection: 划词管理
+    ad_popup: 广告弹窗
+    bundle_install: 捆绑安装
+    privacy: 隐私保护
+
+app_startup:
+  title: 启动项
+  back: 返回
+  disable_all: 全部禁用
+  enable_all: 全部启用
+  disabled: 已禁用
+  enabled: 已启用
+  empty: 暂无开机自启应用
+
+permission_content:
+  intro: "\"荣耀Magic视界\"是一款为荣耀个人提供动效引擎、桌面应用管理、AI控制中心、AI场景感知和AI智能推荐等服务的应用，您在使用本应用之前，应仔细阅读以下服务条款。为实现上述功能，本应用使用过程中需要联网并需收集、使用您的下列信息："
+  info_device: "· 设备信息，包括设备标识符"
+  info_network: "· 网络信息，包括设备IP地址"
+  info_other: "· 您向我们提交的其他相关数据，包括调查问卷"
+  user_experience: "如果您加入用户体验改进计划，则本应用会收集并处理系统功能以及应用程序使用日志、故障日志、设备信息和系统信息。上述数据将会传输并保存至中华人民共和国境内的服务器。"
+  service: "为正常运行本应用，本应用开机自动运行一个常驻服务和托盘应用，如果您不同意我们采集上述信息，将导致本应用无法正常运行。同意之后，您可随时通过\"设置\"中的\"停止服务\"功能以终止以上数据的收集和处理。"
+  retention: "上述信息将会传输并保存至中华人民共和国境内的服务器。我们仅在实现本声明所述目的所必需的时间内保留您的个人信息，并在超出下述保留时间后删除或匿名化处理您的个人信息，除非法律法规另有要求。"
+  uninstall_prefix: "在您卸载荣耀Magic视界后，同意"
+  uninstall_suffix: "记录将立刻删除。"

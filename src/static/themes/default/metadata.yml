@@ -1,0 +1,10 @@
+id: "@default/theme"
+metadata:
+  displayName:
+    en: Default
+    zh-CN: 默认主题
+  description:
+    en: Default MagicTaskbar Theme
+    zh-CN: 默认 MagicTaskbar 主题
+  tags:
+    - taskbar

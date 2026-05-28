@@ -1,0 +1,195 @@
+app_menu:
+  ai_search: 智慧搜索
+  explorer: 文件资源管理器
+  hn_app_store: 应用推荐
+  hn_note: 荣耀超级工作台
+  pc_manager: 荣耀电脑管家
+  ai_assistant: 荣耀 YOYO 助理
+  close: 退出
+  close_multiple: 全部关闭
+  copy_handles: 复制句柄
+  kill: 杀死进程
+  kill_multiple: 杀死所有进程
+  open: 打开
+  open_file_location: 打开文件位置
+  pin: 固定
+  pin_to_center: 固定到中心
+  pin_to_left: 固定到左侧
+  pin_to_right: 固定到右侧
+  run_as: 以管理员身份运行
+  unpin: 取消固定
+context_menu:
+  reorder_disable: 锁定任务栏
+  reorder_enable: 解锁任务栏
+media:
+  not_playing: 未播放任何内容
+media_menu:
+  remove: 移除媒体模块
+start_menu:
+  remove: 移除开始模块
+  name: 开始
+taskbar_menu:
+  add_file: 固定自定义文件
+  add_folder: 固定自定义文件夹
+  media: 添加媒体模块
+  settings: 设置
+  start: 添加启动模块
+  task_manager: 任务管理器
+taskbar:
+  empty: 没有可显示的项目
+  recycle_bin: 回收站
+power_menu:
+  account: 账号
+  settings: 设置
+  lock: 锁定
+  sleep: 睡眠
+  shutdown: 关机
+  restart: 重启
+  exit: 退出Magic视界
+  checkupdate: 检测更新
+  feedback: 建议和反馈
+  about: 关于
+
+about:
+  title: 关于
+  close: 关闭
+  app_name: Magic视界
+  version: 版本
+  loading: 获取中...
+  unknown: 未知版本
+  beta: 众测先锋体验版
+  opensource: 开源软件声明
+  copyright: 版权所有 © 荣耀终端股份有限公司保留一切权利
+
+check_update:
+  title: 检查更新
+  close: 关闭
+  checking: 正在检查
+  new_version_found: 发现新版本
+  already_latest: 已是最新版本
+  new_version: "新版本："
+  current_version: "当前版本："
+  installing: 安装中
+  download_complete: 下载完成
+  downloading: 下载中
+  updating: 更新中
+  confirm_install: 确认安装
+  update_now: 立即更新
+  check_update: 检查更新
+
+feedback:
+  title: 意见反馈
+  close: 关闭
+  opinion_type: 意见类型
+  problem: 问题
+  suggestion: 优化建议
+  feedback_type: 反馈类型
+  feedback_types:
+    upgrade_install_uninstall: 升级/安装和卸载
+    animation: 动效
+    desktop: 桌面
+    desktop_widget: 桌面卡片
+    desktop_wallpaper: 桌面壁纸
+    bottom_taskbar: 底部任务栏
+    top_taskbar: 顶部工具栏
+    control_center: 控制中心
+    calendar_notification: 日历和通知
+    ai_recommendation: 主动AI推荐
+    hummingbird_engine: 纯净系统
+    ui_design: UI设计
+    account_settings: 账号和设置
+    other: 其它
+  description: 详细描述
+  description_placeholder: 请描述您遇到的问题或建议...
+  upload_logs: 上传日志信息以便排查问题
+  contact_method: 联系方式
+  contact_methods:
+    wechat: 微信
+    qq: QQ
+    email: 邮箱
+    phone: 电话
+  contact_placeholder: 请输入{{method}}号
+  official_contact: 官方联系：加入 Magic 视界官方 QQ 群 1060929894，更快解决您的问题。
+  qrcode_hint: QQ 群二维码如下：
+  qrcode_alt: QQ群二维码
+  submit: 提交反馈
+  expand: 展开
+
+recycle_bin:
+  close: 关闭
+  empty: 清空回收站
+
+input_method:
+  title: 输入法
+  chinese: 中
+  english: 英
+  not_detected: 未检测到输入法
+  simplified_chinese: 简体中文（中国大陆）
+  more_settings: 更多键盘设置
+  sougou: 搜狗输入法
+  baidu: 百度输入法
+  wechat: 微信输入法
+  xunfei: 讯飞输入法
+  qq_pinyin: QQ拼音
+  microsoft_pinyin: 微软拼音
+  current: 当前
+  input: 输
+
+bluetooth:
+  title: 蓝牙
+  paired_devices: 已配对的设备
+  available_devices: 可用设备
+  unknown_device: 未知设备
+  this_device: 该设备
+  pairing_failed_title: 蓝牙连接失败
+  pairing_failed_content: '无法与"{{deviceName}}"连接，可能原因如下：'
+  pairing_failed_reason1: 该设备蓝牙关闭，或不在通信范围内；
+  pairing_failed_reason2: 该设备已经与其他设备连接，请断开后重试。
+  pairing_failed_button: 知道了
+  disconnect_title: 断开连接
+  cancel_pairing_title: 取消配对
+  cancel: 取消
+  unpair: 取消配对
+  disconnect: 断开
+  connect: 连接
+  pairing_request_title: 蓝牙配对请求
+  pair: 配对
+  username: 用户名
+  password: 密码
+  device_type: 设备类型
+  battery: 电池
+  connecting: 连接中
+  more_settings: 更多蓝牙设置
+
+network:
+  title: WLAN
+  network_share: 网络共享
+  available_devices: 可用设备
+  not_connected: 未连接
+  connected: 已连接
+  connecting: 连接中
+  connecting_aria: 连接中
+  wlan_switch: WLAN 开关
+  more_settings: 更多WLAN设置
+  auto_connect: 自动连接
+  enabled: 已启用
+  disabled: 已禁用
+  status_message: 状态消息
+  open_browser: 打开浏览器并连接
+  cancel: 取消
+  forget: 忘记
+  disconnect: 断开
+  password: 密码
+  show_password: 显示密码
+  hide_password: 隐藏密码
+  connect: 连接
+  enter_password: 请输入密码
+  password_error: 密码错误
+  location_notice: 检测到系统未开启定位服务，
+  go_settings: 去设置
+  streaming_from: '流转自"{{deviceName}}"'
+  login_required: 需要登录
+
+volume:
+  title: 声音
+  more_settings: 更多声音设置

@@ -1,0 +1,164 @@
+.ai-recommend-module {
+  display: flex;
+  align-items: center;
+  gap: 0; /* 每个 aiFunction 之间没有间距 */
+  position: relative; /* 让弹窗可相对定位到模块容器 */
+}
+
+/* 外部容器（每个 aiFunction） */
+.ai-recommend-item {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px; /* 左右10px */
+  gap: 4px; /* 与后续元素之间的内部间距（预留） */
+  z-index: 3;
+  border-radius: 12px;
+  background: transparent;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+  color: rgba(255, 255, 255, 0.9); /* toolbar 始终为白色前景，不跟随系统深浅色 */
+}
+
+/* 文字容器 */
+.ai-recommend-text {
+  /* 尽量自适应内容宽度，不写死宽度 */
+  height: 16px;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  font-family: "HONOR Sans Design", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: normal;
+  color: currentColor; /* 跟随容器颜色，适配深浅色 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 名称右侧的上下箭头（替换为 SVG 资源） */
+.ai-recommend-updown {
+  width: 6px;
+  height: 9px;
+  margin-left: 2px; /* 距离文字容器右边框 2px */
+  z-index: 1;
+  display: block;
+  pointer-events: none; /* 不响应点击 */
+  fill: currentColor; /* 继承容器文字颜色（白色） */
+}
+
+/* 选中态（当 PD=1 的 sonFunction 决定标签时） */
+.ai-recommend-item--selected {
+  background: rgba(0, 120, 212, 0.9) !important; /* Windows 蓝 */
+  border-radius: 12px !important;
+}
+
+/* 按下态，和其他模块一致 */
+.ai-recommend-item:active {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+/* 弹窗面板样式 */
+.ai-recommend-popup {
+  position: absolute;
+  width: 152px;
+  /* 高度随内容自适应 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px;
+  gap: 4px;
+  border-radius: 16px;
+  background: rgba(20, 20, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+@media (prefers-color-scheme: light) {
+  .ai-recommend-popup {
+    background: rgba(250, 251, 253, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* 弹窗内每行 sonFunction 的外部容器 */
+.ai-recommend-son-item {
+  width: 140px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 8px 8px 8px 12px; /* 上下8px，左右12px与8px */
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px; /* pcButtonRadiusM */
+  cursor: pointer;
+}
+
+.ai-recommend-son-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 文本容器样式 */
+.ai-recommend-son-text {
+  /* 让文本区域自适应，右侧可放确认徽标 */
+  flex: 1 1 auto;
+  height: 16px;
+  z-index: 0;
+  font-family: "HONOR Sans Design", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.9); /* 深色模式白色文字 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-color-scheme: light) {
+  .ai-recommend-son-text {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .ai-recommend-son-item:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* 移除系统深浅色与最大化状态对前景色的影响，保持白色 */
+
+/* 弹窗内当前项的确认徽标样式 */
+.ai-recommend-badge {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  display: block;
+}
+/* 推荐项入场动画 */
+.ai-recommend-item-animate {
+  animation: recommend-appear 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes recommend-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 加载图标样式 */
+.ai-recommend-loading {
+  color: rgba(255, 255, 255, 0.4);
+  display: inline-flex;
+  align-items: center;
+}

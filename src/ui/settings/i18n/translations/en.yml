@@ -1,0 +1,126 @@
+window:
+  title: Settings
+  minimize: Minimize
+  close: Close
+
+menu:
+  notification: Notification & Status Bar
+  taskbar: Desktop & Taskbar
+  puremode: Pure System
+  upgrade: Upgrade Management
+  privacy: Privacy
+
+toolbar:
+  always_show: Always show toolbar
+  smart_hide: Smart auto-hide
+
+notification:
+  title: Notification & Status Bar
+  toolbar_display: Toolbar Display
+  toolbar_desc: Control how the toolbar is displayed on the desktop
+
+taskbar:
+  title: Desktop & Taskbar
+  section_taskbar: Taskbar
+  section_desktop: Desktop
+  zoom_effect: Taskbar Zoom Effect
+  zoom_effect_desc: Zoom taskbar icons on mouse hover
+  zoom_type: Zoom Effect Type
+  zoom_wave: Wave Effect
+  zoom_single: Single Focus
+  icon_theme: Icon Theme
+  icon_theme_default: Crystal Clear
+  icon_theme_blue: Azure Crystal
+  backplate_transparent: Transparent Backplate
+  backplate_white: White Backplate
+  minimize_animation: Minimize Window Animation
+  enable_animation: Enable Animation
+  disable_animation: Disable Animation
+
+puremode:
+  title: Pure System
+  clean_mode: Pure Mode
+  clean_mode_desc: Enable pure mode to reduce system resource usage
+  turn_on_pure_mode: Enable Honor Pure System
+  turn_off_pure_mode: Disable Honor Pure System
+  clean_mode_declaration: Pure Mode Declaration
+  service_optimization: Service Optimization
+  service_optimization_desc: Optimize system services for better performance
+  update_service_optimization: Update Service Optimization
+  turn_on_service: Turn on service optimization
+  turn_off_service: Turn off service optimization
+  idle_update: Idle Update
+  idle_update_desc: Automatically update when system is idle
+  idle_update_magic: Auto-update Magic Vision when idle (Recommended)
+  browser_enhance: Browser Search Enhancement
+  browser_enhance_desc: Enhance browser search experience
+  turn_on_browser_enhance: Turn on browser search enhancement
+  turn_off_browser_enhance: Turn off browser search enhancement
+  third_party_control: Third-party App Control
+  third_party_control_desc: Manage startup and running of third-party apps
+  app_startup: Startup App Management
+  app_startup_desc: Manage auto-start apps
+  view_details: View Details
+  apps_count: apps
+  software_control: Software Control
+  third_party_desc: Intelligently manage third-party software for a pure experience
+  startup_desc: Intelligently manage startup apps for faster boot
+
+upgrade:
+  title: Upgrade Management
+  auto_upgrade: Auto Upgrade
+  auto_upgrade_desc: Enable auto upgrade to keep the app up-to-date
+  turn_on: Turn on auto upgrade
+  turn_off: Turn off auto upgrade
+
+privacy:
+  title: Privacy
+  user_experience: User Experience Program
+  other: Other
+  permission_statement: Honor Magic Vision App Permission Statement
+  stop_service: Stop Service
+  agreement_declaration: Agreements & Declarations
+  user_agreement: User Agreement
+  privacy_statement: Privacy Statement
+  after_uninstall: 'After uninstalling Honor Magic Vision, your consent to the '
+  and: ' and '
+  records_delete: ' records will be deleted immediately.'
+
+popup:
+  confirm: Confirm
+  cancel: Cancel
+  stop_service_title: Stop Service
+  stop_service_desc: Clicking "Confirm" will terminate the Honor Magic Vision user agreement. Please note that Honor Magic Vision will no longer be able to provide services and will stop processing your information.
+
+third_party:
+  title: Third-party App Control
+  back: Back
+  disable_all: Disable All
+  enable_all: Enable All
+  disabled: Disabled
+  enabled: Enabled
+  categories:
+    word_selection: Word Selection Management
+    ad_popup: Ad Popup Blocker
+    bundle_install: Bundle Install Blocker
+    privacy: Privacy Protection
+
+app_startup:
+  title: Startup Items
+  back: Back
+  disable_all: Disable All
+  enable_all: Enable All
+  disabled: Disabled
+  enabled: Enabled
+  empty: No startup apps
+
+permission_content:
+  intro: "\"Honor Magic Vision\" is an application that provides animation engine, desktop app management, AI control center, AI scene perception, and AI intelligent recommendation services for Honor users. Before using this application, please read the following terms carefully. To implement the above functions, this application needs to connect to the network and collect and use the following information:"
+  info_device: "\u00b7 Device information, including device identifiers"
+  info_network: "\u00b7 Network information, including device IP address"
+  info_other: "\u00b7 Other relevant data you submit to us, including surveys"
+  user_experience: "If you join the User Experience Improvement Program, this application will collect and process system functions and application usage logs, fault logs, device information, and system information. The above data will be transmitted and stored on servers in the People's Republic of China."
+  service: "To run this application normally, it automatically runs a resident service and tray application at startup. If you do not agree to our collection of the above information, this application will not be able to run normally. After agreeing, you can terminate the collection and processing of the above data at any time through the \"Stop Service\" function in \"Settings\"."
+  retention: "The above information will be transmitted and stored on servers in the People's Republic of China. We will only retain your personal information for the time necessary to achieve the purposes stated in this statement, and will delete or anonymize your personal information after exceeding the following retention period, unless otherwise required by laws and regulations."
+  uninstall_prefix: "After you uninstall Honor Magic Vision, the records of agreeing to "
+  uninstall_suffix: " will be deleted immediately."

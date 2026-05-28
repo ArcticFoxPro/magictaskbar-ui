@@ -1,0 +1,14 @@
+[package]
+name = "slu-ipc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true }
+thiserror = { workspace = true }
+log = { workspace = true }
+interprocess = { workspace = true, features = ["tokio"] }
+libs-core = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+uuid = { workspace = true }

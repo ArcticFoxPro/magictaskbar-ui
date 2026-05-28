@@ -1,0 +1,20 @@
+{
+  "name": "@magic-ui/lib",
+  "version": "2.4.4",
+  "description": "Magic UI Library for Widgets",
+  "license": "AGPL-3.0",
+  "exports": {
+    ".": "./src/lib.ts",
+    "./types": "./gen/types/mod.ts",
+    "./tauri": "./src/re-exports/tauri.ts"
+  },
+  "tasks": {
+    "build:npm:node": "node ./scripts/build_npm_node.js",
+    "build:rs": "deno run -A ./scripts/rust_bindings.ts",
+    "build": "deno task build:rs && deno task build:npm:node"
+  },
+  "imports": {
+    "@magic-ui/types": "./gen/types/mod.ts",
+    "@tauri-apps/api": "npm:@tauri-apps/api@^2.8.0"
+  }
+}

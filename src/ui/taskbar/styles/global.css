@@ -1,0 +1,407 @@
+﻿/**
+ * The styles in this file are only structural for MagicTaskbar,
+ * all the design should be added to the default theme css.
+ */
+
+/* 最强力的滚动条防护 - 应用于所有元素 */
+* {
+  &::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+  }
+}
+
+body {
+  overflow: hidden;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  &:has(.taskbar.left) {
+    justify-content: flex-start;
+  }
+
+  &:has(.taskbar.right) {
+    justify-content: flex-end;
+  }
+
+  &:has(.taskbar.top) {
+    align-items: flex-start;
+  }
+
+  &:has(.taskbar.bottom) {
+    align-items: flex-end;
+  }
+}
+
+/** Root Styles */
+#root {
+  --dock-size: calc(var(--config-item-size) + (var(--config-padding) + var(--config-margin)) * 2);
+
+  position: absolute;
+  height: min-content;
+  width: min-content;
+  max-width: 100vw;
+  max-height: 100vh;
+  transition: transform 0.2s ease-in-out;
+  overflow: visible; /* 允许图标悬浮溢出 */
+  overflow-x: visible; /* 允许水平溢出 */
+  overflow-y: visible; /* 允许垂直溢出 */
+
+  /* 添加窗口大小变化时的防护 */
+  resize: none;
+
+  /* 防止滚动条闪现 */
+  animation: preventScrollbarFlash 0.1s linear;
+  will-change: overflow;
+
+  /* 强制隐藏所有滚动条 */
+  scrollbar-gutter: stable both-edges;
+
+  &:has(.taskbar.left) {
+    left: 0;
+  }
+
+  &:has(.taskbar.right) {
+    right: 0;
+  }
+
+  &:has(.taskbar.top) {
+    top: 0;
+  }
+
+  &:has(.taskbar.bottom) {
+    bottom: 0;
+  }
+
+  &:not(:hover) {
+    &:has(.taskbar.hidden.left) {
+      transform: translate(calc(var(--dock-size) * -1), 0);
+    }
+
+    &:has(.taskbar.hidden.right) {
+      transform: translate(var(--dock-size), 0);
+    }
+
+    &:has(.taskbar.hidden.top) {
+      transform: translate(0, calc(var(--dock-size) * -1));
+    }
+
+    &:has(.taskbar.hidden.bottom) {
+      transform: translate(0, calc(var(--dock-size) + 25px));
+    }
+  }
+}
+
+/** Taskbar Styles */
+.taskbar {
+  --max-taskbar-width: calc(100vw - var(--config-margin) * 2);
+  --max-taskbar-height: calc(100vh - var(--config-margin) * 2);
+  --smooth-radius: 60%; /* 平滑圆角百分比 */
+
+  position: relative;
+  margin: var(--config-margin);
+  max-width: var(--max-taskbar-width);
+  max-height: var(--max-taskbar-height);
+  border-radius: var(--taskbar-border-radius, 18px); /* 任务栏圆角 */
+  overflow: visible; /* 允许图标悬浮时溢出 */
+  box-shadow: 0 0 0 calc(18px * (100% - var(--smooth-radius)) / 100%) rgba(255, 255, 255, 0) inset; /* 60%平滑圆角效果 */
+
+  .taskbar-items-container {
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    padding: var(--config-padding);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .taskbar-items {
+      display: flex;
+      /* 不使用gap，避免影响隐藏的分隔符 */
+      /* 确保子元素正确排列 */
+      align-items: flex-end;
+    }
+  }
+
+  &.full-width {
+    .taskbar-item-drag-container:has(.taskbar-separator) {
+      flex: 1;
+    }
+  }
+
+  &.horizontal {
+    width: min-content;
+    height: calc(var(--config-item-size) + var(--config-padding) * 2);
+
+    &.bottom {
+      margin-bottom: 5px;
+    }
+
+    .taskbar-item-drag-container:has(.taskbar-separator) {
+      align-self: flex-end;
+      height: var(--config-item-size);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &.full-width {
+      width: var(--max-taskbar-width);
+    }
+
+    .taskbar-items {
+      flex-direction: row;
+      min-width: 100%;
+      width: max-content;
+      /* 固定高度，让图标能够向外溢出 */
+      height: var(--config-item-size);
+      overflow: visible;
+      /* 确保子元素正确排列 */
+      align-items: flex-end;
+    }
+
+    /* 水平Dock对齐方式 */
+    &.bottom .taskbar-items {
+      align-items: flex-end; /* 底部对齐，让margin-bottom能把图标向上推 */
+    }
+
+    &.top .taskbar-items {
+      align-items: flex-start; /* 顶部对齐，让margin-top能把图标向下推 */
+      /* 确保子元素正确排列 */
+      align-items: flex-start;
+    }
+  }
+
+  &.vertical {
+    width: calc(var(--config-item-size) + var(--config-padding) * 2);
+    height: min-content;
+
+    &.full-width {
+      height: var(--max-taskbar-height);
+    }
+
+    .taskbar-items {
+      flex-direction: column;
+      min-height: 100%;
+      height: max-content;
+      /* 固定宽度，让图标能够向外溢出 */
+      width: var(--config-item-size);
+      overflow: visible;
+      /* 确保子元素正确排列 */
+      align-items: center;
+    }
+
+    /* 垂直Dock对齐方式，未来功能预留 */
+    &.left .taskbar-items {
+      align-items: flex-start; /* 左侧对齐，让margin-left能把图标向右推 */
+      /* 确保子元素正确排列 */
+      align-items: flex-start;
+    }
+
+    &.right .taskbar-items {
+      align-items: flex-end; /* 右侧对齐，让margin-right能把图标向左推 */
+      /* 确保子元素正确排列 */
+      align-items: flex-end;
+    }
+  }
+
+  &:has(.taskbar-item-drag-container.dragging) {
+    pointer-events: none;
+  }
+}
+
+/* Gap缩放支持：通过margin控制间距 */
+.taskbar-item-drag-container {
+  /* 原非MAC波浪效果时配置 */
+  /* 水平Dock：右侧margin */
+  .horizontal & {
+    margin-right: calc(var(--config-space-between-items) * var(--gap-scale, 1));
+    align-self: flex-end;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  /* 垂直Dock：下方margin，未来功能预留 */
+  .vertical & {
+    margin-bottom: calc(var(--config-space-between-items) * var(--gap-scale, 1));
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* 灵动波浪模式：额外空间配置 */
+  .taskbar.wave.horizontal & {
+    --mag-extra-before: 0px;
+    --mag-extra-after: 0px;
+    align-self: flex-end;
+
+    margin-left: var(--mag-extra-before);
+    margin-right: calc(var(--config-space-between-items) * var(--gap-scale, 1) + var(--mag-extra-after));
+
+    &:last-child {
+      margin-right: var(--mag-extra-after);
+    }
+  }
+
+  .taskbar.wave.vertical & {
+    --mag-extra-before: 0px;
+    --mag-extra-after: 0px;
+
+    margin-top: var(--mag-extra-before);
+    margin-bottom: calc(var(--config-space-between-items) * var(--gap-scale, 1) + var(--mag-extra-after));
+
+    &:last-child {
+      margin-bottom: var(--mag-extra-after);
+    }
+  }
+
+  /* 当分隔符不可见时，让容器完全不占据空间 */
+  &:has(.taskbar-separator:not(.visible)) {
+    .horizontal & {
+      width: 0;
+      max-width: 0;
+      min-width: 0;
+      margin-right: 0;
+      padding: 0;
+    }
+    .vertical & {
+      height: 0;
+      max-height: 0;
+      min-height: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+}
+
+.taskbar-separator {
+  opacity: 0;
+  box-sizing: border-box;
+  /* 深色模式默认颜色 */
+  background-color: rgba(0, 0, 0, 0.6);
+
+  @media (prefers-color-scheme: light) {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .vertical & {
+    width: var(--config-item-size);
+  }
+
+  .horizontal & {
+    height: 48px;
+  }
+
+  .taskbar-item-drag-container:not(:first-child):not(:last-child) > & {
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  .taskbar-item-drag-container:first-child > & {
+    .vertical & {
+      margin-top: calc(var(--config-space-between-items) * -1);
+    }
+
+    .horizontal & {
+      margin-left: calc(var(--config-space-between-items) * -1);
+    }
+  }
+
+  .taskbar-item-drag-container:last-child > & {
+    .vertical & {
+      margin-bottom: calc(var(--config-space-between-items) * -1);
+    }
+
+  }
+}
+
+.taskbar-item-preview-container {
+  position: relative;
+  max-width: 100vw;
+  gap: var(--config-space-between-items);
+
+  .taskbar-item-preview-scrollbar {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+  }
+}
+
+.taskbar-item-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 4px;
+  min-width: 200px;
+  max-width: 300px;
+
+  .taskbar-item-preview-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    gap: 8px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.taskbar-item-preview-list-item-focused {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .taskbar-item-preview-list-item-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .taskbar-item-preview-list-item-title {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+
+    .taskbar-item-preview-list-item-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      font-size: 18px;
+      line-height: 1;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      color: inherit;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--color-red-800);
+        color: white;
+      }
+    }
+  }
+}
+
+/* 窗口数 ≤ 1 时显示的应用名称的容器stytle */
+.taskbar-item-display-name {
+  white-space: nowrap;
+  padding: 0px 0px;
+  border-radius: 2px;
+  font-size: 13px;
+}

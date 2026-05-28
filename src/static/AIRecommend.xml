@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 以进程为节点，进程属性为子节点 -->
+
+<config>
+  <version>1.0.0.0</version>
+  <Scenes>
+    <Scene id="0001" name="文档阅读场景" sceneType="1" enterMessage="startRead" exitMessage="exitRead">
+      <aiFunction num="0" name="总结" btnId="Summary"/>
+      <aiFunction num="1" name="脑图" btnId="MindMap"/>
+      <aiFunction num="2" name="荣耀分享" btnId="HonorShare"/>
+      <aiFunction num="3" name="更多功能" btnId="AvailableNow"/>
+    </Scene>
+    <Scene id="0002" name="浏览器场景" sceneType="2" enterMessage="startBrowser" exitMessage="exitBrowser">
+      <aiFunction num="0" name="YOYO识屏" btnId="YOYOScreenshot"/>
+      <aiFunction num="1" name="更多功能" btnId="AvailableNow"/>
+    </Scene>
+    <Scene id="0003" name="会议场景" sceneType="3" enterMessage="startMeet" exitMessage="exitMeet">
+      <aiFunction num="0" name="AI字幕" btnId="AISamrtAudio"/>
+      <aiFunction num="1" name="AI降噪">
+        <sonFunction num="0" name="全向拾音降噪" btnId="MutiNoiseReduction"/>
+        <sonFunction num="1" name="正面拾音降噪" btnId="SingleNoiseReduction"/>
+		<sonFunction num="2" name="通话对端降噪" btnId="CallNoiseReduction"/>
+        <sonFunction num="3" name="AI声纹降噪" btnId="VoicePrintNoiseReduction"/>
+        <sonFunction num="4" name="关闭降噪" btnId="AmbientNoiseReduction"/>
+      </aiFunction>
+      <aiFunction num="2" name="YOYO会议" btnId="MeetingAssistant"/>
+	  <aiFunction num="3" name="YOYO识屏" btnId="YOYOScreenshot"/>
+    </Scene>
+    <Scene id="0004" name="音频场景" sceneType="4" enterMessage="startMusic" exitMessage="exitMusic">
+      <aiFunction num="0" name="智慧音频">
+        <sonFunction num="0" name="空间音频" btnId="SpatialAudioSpeaker"/>
+        <sonFunction num="1" name="空间音频" btnId="SpatialAudioEarphone"/>
+        <sonFunction num="2" name="立体声音频" btnId="SteroSoundSpeaker"/>
+        <sonFunction num="3" name="立体声音频" btnId="SteroSoundEarphone"/>
+        <sonFunction num="4" name="DTS音效" btnId="DTSAudio"/>
+        <sonFunction num="5" name="动态音效" btnId="DynamicSoundEffects"/>
+        <sonFunction num="6" name="电影音效" btnId="MovieSoundEffects"/>
+        <sonFunction num="7" name="音乐音效" btnId="MusicSoundEffects"/>
+        <sonFunction num="8" name="游戏音效" btnId="GameSoundEffects"/>
+        <sonFunction num="9" name="通话音效" btnId="CallSoundEffects"/>
+      </aiFunction>
+    </Scene>
+    <Scene id="0005" name="视频场景" sceneType="5" enterMessage="startVideo" exitMessage="exitVideo">
+      <aiFunction num="0" name="智慧音频">
+        <sonFunction num="0" name="空间音频" btnId="SpatialAudioSpeaker"/>
+        <sonFunction num="1" name="空间音频" btnId="SpatialAudioEarphone"/>
+        <sonFunction num="2" name="立体声音频" btnId="SteroSoundSpeaker"/>
+        <sonFunction num="3" name="立体声音频" btnId="SteroSoundEarphone"/>
+        <sonFunction num="4" name="DTS音效" btnId="DTSAudio"/>
+        <sonFunction num="5" name="动态音效" btnId="DynamicSoundEffects"/>
+        <sonFunction num="6" name="电影音效" btnId="MovieSoundEffects"/>
+        <sonFunction num="7" name="音乐音效" btnId="MusicSoundEffects"/>
+        <sonFunction num="8" name="游戏音效" btnId="GameSoundEffects"/>
+        <sonFunction num="9" name="通话音效" btnId="CallSoundEffects"/>
+      </aiFunction>
+    </Scene>
+  </Scenes>
+</config>

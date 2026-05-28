@@ -1,0 +1,231 @@
+/* 回收站清空确认弹窗样式 - macOS 风格 */
+
+/* 弹窗容器 - 浅色毛玻璃效果 */
+.recycle-bin-clear-modal-container {
+  background: transparent;  /* 容器背景改为透明，让 body 显示 */
+  border-radius: 26px;  /* 与设计图一致 */
+  padding: 0;  /* 移除内边距 */
+  width: 100% !important;
+  height: 100% !important;  /* 填满整个窗口 */
+  min-width: 288px !important;
+  max-width: 288px !important;
+  min-height: 216px !important;
+  max-height: 216px !important;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);  /* 柔和的阴影 */
+  backdrop-filter: blur(16px);
+  overflow: visible !important;  /* 允许内容溢出，窗口本身已设置圆角 */
+  /* 绝对定位，确保在屏幕正中央 */
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  border: none !important;  /* 确保没有任何边框 */
+}
+
+@keyframes recycleBinModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 弹窗头部 */
+.recycle-bin-clear-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .recycle-bin-clear-modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* 弹窗标题 */
+.recycle-bin-clear-modal-title {
+  margin: 0;
+  font-family: 'HONOR Sans Design', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.86);
+  letter-spacing: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  .recycle-bin-clear-modal-title {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* 关闭按钮 */
+.recycle-bin-clear-modal-close-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  .recycle-bin-clear-modal-close-btn {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.recycle-bin-clear-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+@media (prefers-color-scheme: light) {
+  .recycle-bin-clear-modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.86);
+  }
+}
+
+/* 弹窗主体内容 */
+.recycle-bin-clear-modal-body {
+  position: relative;  /* 为子元素的绝对定位提供参考 */
+  padding: 0;
+  width: 288px;  /* 与容器同宽 */
+  height: 216px;  /* 与容器同高 */
+  display: block;
+  text-align: center;
+  background: rgba(250, 251, 253, 0.75);  /* 设计图要求的半透明浅色 */
+  backdrop-filter: blur(16px);  /* 毛玻璃效果 */
+}
+
+/* 文本框容器 - 包含提示文字和警告文字 */
+.recycle-bin-clear-modal-text-container {
+  position: absolute;
+  left: 20px;
+  top: 100px;  /* 图标下方：20 + 64 + 16 = 100 */
+  width: 248px;
+  height: 50px;  /* 固定高度，避免覆盖图标 */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+}
+
+/* 回收站图标 */
+.recycle-bin-clear-modal-icon {
+  position: absolute;  /* 绝对定位 */
+  left: 112px;  /* 居中计算：(288-64)/2 = 112 */
+  top: 20px;  /* 距离容器顶部 */
+  width: 64px;  /* 精确匹配设计图 */
+  height: 64px;  /* 精确匹配设计图 */
+  object-fit: contain;
+  z-index: 100;  /* 确保在最上层，远高于其他元素 */
+}
+
+/* 提示文字 */
+.recycle-bin-clear-modal-message {
+  font-size: 14px !important;  /* 设计图要求 */
+  font-weight: 600 !important;  /* 设计图要求 */
+  color: rgba(0, 0, 0, 0.9) !important;  /* 黑色文字，适配浅色背景 */
+  line-height: 20px;  /* 设计图要求 */
+  white-space: nowrap;  /* 强制不换行 */
+}
+
+.recycle-bin-clear-modal-message .item-count {
+  color: #64b5f6;  /* 亮蓝色高亮数字 */
+  font-weight: 500;
+}
+
+/* 警告文字 */
+.recycle-bin-clear-modal-warning {
+  font-size: 14px;  /* 设计图要求 */
+  font-weight: 400;  /* 设计图要求 */
+  color: rgba(0, 0, 0, 0.9);  /* 设计图要求：前景色 */
+  line-height: 20px;  /* 设计图要求 */
+  margin-top: 4px;  /* 与提示文字的间距 */
+}
+
+/* 按钮组容器 */
+.recycle-bin-clear-modal-buttons {
+  position: absolute;
+  left: 20px;
+  top: 164px;  /* 设计图要求 */
+  width: 248px;
+}
+
+/* 按钮基础样式 */
+.recycle-bin-clear-modal-btn {
+  position: absolute;  /* 绝对定位 */
+  width: 118px;  /* 设计图要求 */
+  height: 32px;  /* 设计图要求 */
+  border-radius: 18px;  /* 设计图要求 */
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;  /* 设计图要求 */
+}
+
+/* 取消按钮 - 左侧 */
+.recycle-bin-clear-modal-btn.cancel-btn {
+  left: 0;  /* 距离按钮组左边 0px */
+  background: rgba(0, 0, 0, 0.05);  /* 设计图要求：浅色背景上的淡灰色 */
+  color: rgba(0, 0, 0, 0.9);  /* 黑色文字 */
+  border: 1px solid rgba(0, 0, 0, 0.1);  /* 浅色边框 */
+  z-index: 0;  /* 设计图要求 */
+}
+
+.recycle-bin-clear-modal-btn.cancel-btn:hover {
+  background: rgba(0, 0, 0, 0.1);  /* 悬停时变深 */
+  transform: scale(1.02);
+}
+
+.recycle-bin-clear-modal-btn.cancel-btn:active {
+  transform: scale(0.98);
+}
+
+/* 确认按钮 - 右侧 */
+.recycle-bin-clear-modal-btn.confirm-btn {
+  right: 0;  /* 距离按钮组右边 0px */
+  background: #256FFF;  /* 设计图要求：通用高亮色 */
+  color: #ffffff;
+  border: none;
+  z-index: 1;  /* 设计图要求 */
+  box-shadow: none;  /* 移除渐变阴影 */
+}
+
+.recycle-bin-clear-modal-btn.confirm-btn:hover {
+  background: #1a5ae8;  /* 悬停时稍微变暗 */
+  box-shadow: none;
+  transform: scale(1.02);
+}
+
+.recycle-bin-clear-modal-btn.confirm-btn:active {
+  transform: scale(0.98);
+}
+
+.recycle-bin-clear-modal-btn.confirm-btn:active {
+  transform: translateY(0);
+}

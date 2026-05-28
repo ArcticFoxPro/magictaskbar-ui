@@ -1,0 +1,492 @@
+﻿:root {
+  --dock-item-hover-color: rgba(var(--config-accent-light-color-rgb), 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dock-item-hover-color: rgba(var(--config-accent-color-rgb), 0.2);
+  }
+}
+
+@keyframes shadow-on-horizontal-scroll {
+  from {
+    box-shadow: inset -20px 0 15px -10px rgb(0 0 0 / 0.5);
+  }
+  to {
+    box-shadow: inset 20px 0 15px -10px rgb(0 0 0 / 0.5);
+  }
+}
+
+@keyframes shadow-on-vertical-scroll {
+  from {
+    box-shadow: inset 0 -20px 15px -10px rgb(0 0 0 / 0.5);
+  }
+  to {
+    box-shadow: inset 0 20px 15px -10px rgb(0 0 0 / 0.5);
+  }
+}
+
+.taskbar {
+  > .bg-layers {
+    > .bg-layer-2 {
+
+      background: transparent;
+      border-radius: 18px;
+
+      /* 白色边框 */
+      border: 1px solid rgba(255, 255, 255, 0.30);
+
+      /* 柔和阴影 + 内部高光 */
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.14),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+  }
+
+  > .taskbar-items-container {
+    border-radius: 18px;  /* 设置圆角 */
+  }
+
+  &.horizontal {
+    > .taskbar-items-container {
+      animation: shadow-on-horizontal-scroll linear;
+      animation-timeline: scroll(x self);
+    }
+  }
+
+  &.vertical {
+    > .taskbar-items-container {
+      animation: shadow-on-vertical-scroll linear;
+      animation-timeline: scroll(y self);
+    }
+  }
+
+  &.temporal-only {
+    --empty-rule: "delete me on use";
+  }
+}
+
+.taskbar-separator {
+  position: relative;
+
+  .horizontal & {
+    &.taskbar-separator-1::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2.02px;
+      bottom: 2.02px;
+      width: 1px;
+      background-color: var(--color-gray-500);
+    }
+    &.taskbar-separator-2::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 2.02px;
+      bottom: 2.02px;
+      width: 1px;
+      background-color: var(--color-gray-500);
+    }
+  }
+
+  .vertical & {
+    &.taskbar-separator-1::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 2.02px;
+      right: 2.02px;
+      height: 1px;
+      background-color: var(--color-gray-500);
+    }
+    &.taskbar-separator-2::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 2.02px;
+      right: 2.02px;
+      height: 1px;
+      background-color: var(--color-gray-500);
+    }
+  }
+}
+
+.taskbar-empty-state-label {
+  white-space: nowrap;
+  width: min-content;
+  line-height: var(--config-item-size);
+  vertical-align: middle;
+  font-style: italic;
+  color: var(--color-gray-400);
+  margin: 0 calc(var(--config-padding) * 2);
+}
+
+:root {
+  --padding-ratio: 0.15; /* this count as x2 like there is a padding on each side */
+  --inner-spacing: calc(var(--config-item-size) * var(--padding-ratio));
+  /* this represent the max item size as 3 items to follow simetry */
+  --max-item-size: calc(var(--config-item-size) * 3 + var(--config-space-between-items) * 2);
+  /* 设置固定圆角值 */
+  --border-radius: 9.41px;
+  /* 平滑圆角百分比 */
+  --item-smooth-radius: 80%;
+}
+
+.taskbar-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--inner-spacing);
+  /* 原非MAC波浪效果时配置 */
+  /* 支持动态缩放：宽高根据--item-scale变化 */
+  min-width: calc(var(--config-item-size) * var(--item-scale, 1));
+  max-width: calc(var(--max-item-size) * var(--item-scale, 1));
+  width: calc(var(--config-item-size) * var(--item-scale, 1));
+  height: calc(var(--config-item-size) * var(--item-scale, 1));
+
+  /* 添加平滑过渡 */
+  transition:
+    width 0.08s ease-out,
+    height 0.08s ease-out,
+    min-width 0.08s ease-out,
+    max-width 0.08s ease-out,
+    transform 0.2s ease;
+
+  /* 透明背板模式：默认隐藏背板样式，且没有内边距限制 */
+  .taskbar:not(.white-backplate) & {
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+    > .bg-layers {
+      display: none;
+    }
+  }
+
+  /* 透明背板模式：为非本地图标添加背板样式（包括所有没有data-shape属性的图标） */
+  .taskbar:not(.white-backplate) &:has(.taskbar-item-icon:not([data-shape="square"])) {
+    border-radius: var(--border-radius);
+    background-image: url("/static/icons/file_bkg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    > .taskbar-item-icon {
+      transform: scale(0.6);
+    }
+  }
+
+  /* 白色背板模式：为非本地图标添加白色背景 */
+  .taskbar.white-backplate &:has(.taskbar-item-icon:not([data-shape="square"])) {
+    border-radius: var(--border-radius);
+    background-image: url("/static/icons/file_bkg_white.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    > .taskbar-item-icon {
+      transform: scale(0.6);
+    }
+  }
+
+  &.media-session-container {
+    padding: 0;
+
+    &.media-session-container-horizontal {
+      width: var(--max-item-size);
+    }
+
+    &.media-session-container-vertical {
+      height: var(--max-item-size);
+    }
+
+    .media-session {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+  }
+
+  /* 原非MAC波浪效果时配置 */
+  /* 鼠标悬浮效果 - 通过transform实现放大+移动 */
+  &:hover {
+    .taskbar.zoom-enabled & {
+      .bottom & {
+        transform: translateY(-8px) scale(1.2);
+      }
+      .top & {
+        transform: translateY(8px) scale(1.2);
+      }
+      .left & {
+        transform: translateX(8px) scale(1.2);
+      }
+      .right & {
+        transform: translateX(-8px) scale(1.2);
+      }
+    }
+  }
+
+  &:active {
+    /* 整个容器缩放，包括背板 */
+    transform: scale(0.8);
+  }
+
+  .taskbar-item-icon {
+    height: 100%;
+    width: unset;
+    aspect-ratio: 1/1;
+    /* 移除drop-shadow滤镜以消除图标周围的视觉效果 */
+    object-fit: contain;
+    background: none; /* 明确设置背景为无 */
+    border: none; /* 确保没有边框 */
+    outline: none; /* 确保没有轮廓 */
+
+    /* &[data-shape="square"] {} (this attribute exists but is not used on default theme) */
+
+    &.taskbar-item-start-icon {
+      filter: none;
+    }
+  }
+
+  /* 开始菜单图标增加左侧间距 */
+  &.taskbar-item-start {
+    margin-left: 0px;
+  }
+
+  .taskbar-item-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    font-size: max(calc(var(--config-item-size) / 3), 12px);
+    font-weight: 600;
+
+    .vertical & {
+      display: none;
+    }
+  }
+
+  .taskbar-item-notification-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #FF0000;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 3px rgba(255, 0, 0, 0.6);
+  }
+
+  .taskbar-item-instance-counter-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(25%, -25%);
+    background-color: #FF0000;
+    color: #FFFFFF;
+    height: 16px;
+    min-width: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+
+/* System Tray Styles */
+.system-tray-module {
+  position: relative;
+}
+
+.system-tray-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.system-tray-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  z-index: 999999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.taskbar-item-open-sign {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    background-color: var(--color-gray-600);
+    opacity: 0;
+    transition-property: width, height, transform, opacity, background-color, border-radius;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    .vertical & {
+      transform: translateX(-50%);
+    }
+
+    .horizontal & {
+      transform: translateY(-50%);
+    }
+
+    .top & {
+      bottom: calc(100% + var(--config-padding) / 2);
+    }
+
+    .bottom & {
+      top: calc(100% + var(--config-padding) / 2);
+    }
+
+    .left & {
+      right: calc(100% + var(--config-padding) / 2);
+    }
+
+    .right & {
+      left: calc(100% + var(--config-padding) / 2);
+    }
+
+    &.taskbar-item-open-sign-active {
+      opacity: 1;
+    }
+  }
+}
+
+/* 原非MAC波浪效果时配置 */
+/* 支持动态缩放：宽高根据--item-scale变化 */
+.taskbar .taskbar-items .taskbar-item-drag-container.singleIcon .taskbar-item {
+  min-width: calc(var(--config-item-size) * var(--item-scale, 1));
+  max-width: calc(var(--max-item-size) * var(--item-scale, 1));
+  width: calc(var(--config-item-size) * var(--item-scale, 1));
+  height: calc(var(--config-item-size) * var(--item-scale, 1));
+
+  /* 添加平滑过渡 */
+  transition:
+    width 0.08s ease-out,
+    height 0.08s ease-out,
+    min-width 0.08s ease-out,
+    max-width 0.08s ease-out,
+    transform 0.2s ease;
+}
+
+/* 原非 MAC 波浪效果时配置 */
+/* 鼠标悬浮效果 - 通过 transform 实现放大 + 移动 */
+/* 🚀 仅在单点聚焦模式下使用 CSS :hover 实现放大效果 */
+/* 🚀 灵动波浪模式使用 JavaScript (DockMagnifier.tsx) 实现波浪联动效果 */
+/* 📏 视觉位移计算：translateY = -期望像素 × scale = -8px × 1.2 = -9.6px */
+/* 🚀 transition 也添加 !important 确保不被覆盖 */
+/* 🚀 必须同时满足 zoom-enabled 和 singleIcon 才生效，受总开关控制 */
+.taskbar.zoom-enabled.singleIcon.bottom .taskbar-item:hover {
+  transform: translateY(-8px) scale(1.2) !important;
+  transition: transform 0.2s ease-out !important;
+}
+.taskbar.zoom-enabled.singleIcon.top .taskbar-item:hover {
+  transform: translateY(8px) scale(1.2) !important;
+  transition: transform 0.2s ease-out !important;
+}
+.taskbar.zoom-enabled.singleIcon.left .taskbar-item:hover {
+  transform: translateX(8px) scale(1.2) !important;
+  transition: transform 0.2s ease-out !important;
+}
+.taskbar.zoom-enabled.singleIcon.right .taskbar-item:hover {
+  transform: translateX(-8px) scale(1.2) !important;
+  transition: transform 0.2s ease-out !important;
+}
+
+/* 波浪效果配置 */
+/* 固定宽高，使用 transform: scale() 实现视觉放大 */
+.taskbar .taskbar-items .taskbar-item-drag-container.wave .taskbar-item {
+  min-width: var(--config-item-size);
+  max-width: var(--config-item-size);
+  width: var(--config-item-size);
+  height: var(--config-item-size);
+  /* transform 由 JS 控制，不需要 CSS transition */
+  transition: none;
+
+  /* 根据 Dock 位置设置 transform-origin，让图标向外扩展 */
+  .bottom & {
+    transform-origin: center bottom;
+  }
+  .top & {
+    transform-origin: center top;
+  }
+  .left & {
+    transform-origin: left center;
+  }
+  .right & {
+    transform-origin: right center;
+  }
+}
+
+.taskbar.hidden,
+.taskbar.hidden .taskbar-items-container {
+  overflow: hidden;
+}
+
+.taskbar-context-menu-container {
+  padding: 3px;  /* 改为3px，与预览列表保持一致 */
+
+  > .bg-layers {
+    > .bg-layer-1 {
+      background-color: var(--color-gray-100);
+      border-radius: 10px;
+    }
+  }
+
+  .taskbar-context-menu {
+    --empty-rule: "delete me on use";
+  }
+
+  .taskbar-context-menu-item-icon {
+    width: 1em;
+  }
+}
+
+.taskbar-item-preview-container {
+  margin: calc(var(--config-padding) * 2);
+  padding: 7px;
+  border-radius: 6px;
+
+  > .bg-layers {
+    > .bg-layer-1 {
+      background-color: var(--color-gray-100);
+      border-radius: 6px;
+    }
+  }
+
+  .taskbar-item-display-name {
+    white-space: nowrap;
+  }
+
+  .taskbar-item-preview-scrollbar {
+    &:has(.taskbar-item-preview-thumbnail-disabled) {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  }
+}

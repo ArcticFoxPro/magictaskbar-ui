@@ -1,0 +1,202 @@
+/**
+ * The styles in this file are only structural for toolbar,
+ * all the design should be added to the default theme css.
+ */
+body {
+  overflow: hidden;
+  background: transparent;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  position: absolute;
+  width: 100vw;
+  /* 默认用于“显示”时的过渡时长 */
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: var(--config-time-before-show);
+
+  &:has(.ft-bar.top) {
+    top: 0;
+  }
+
+  &:has(.ft-bar.bottom) {
+    bottom: 0;
+  }
+
+  &:has(.ft-bar-hidden.top:not(:hover)) {
+    transform: translate(0, calc(var(--config-height) * -1));
+  }
+
+  &:has(.ft-bar-hidden.bottom:not(:hover)) {
+    transform: translate(0, calc(var(--config-height)));
+  }
+  /* 当目标状态是“隐藏”时，过渡时长改为隐藏配置（可为 0ms） */
+  &:has(.ft-bar-hidden) {
+    transition-duration: var(--config-time-before-hide);
+  }
+}
+
+.ft-bar {
+  position: relative;
+  width: 100%;
+  height: var(--config-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--config-padding-at-side);
+  /* Match taskbar background tone via overlay; keep layout intact */
+  background: transparent;
+}
+
+/* Background tone overlay to match taskbar's bg-layer-2 */
+.ft-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* 无最大化窗口时：顶部到底部 25% → 0% 黑色渐变 */
+.ft-bar:not(.ft-bar-has-maximized)::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* 有最大化窗口时的背景样式 */
+.ft-bar.ft-bar-has-maximized::before {
+  background-color: #000000;
+  backdrop-filter: blur(20px);
+  box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.24);
+}
+/* Ensure content renders above the overlay */
+.ft-bar > * { position: relative; z-index: 1; }
+  
+  .ft-bar-left,
+  .ft-bar-center,
+  .ft-bar-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 0px;
+  }
+
+  .ft-bar-left {
+    max-width: 50%;
+    width: 50%;
+    overflow: visible;
+    justify-content: flex-start;
+  }
+
+  .ft-bar-center {
+    justify-content: center;
+    padding: 0 6px;
+  }
+
+  .ft-bar-right {
+    max-width: 50%;
+    width: 50%;
+    overflow: visible;
+    justify-content: flex-end;
+  }
+
+  /* Normalize spacing for right-side modules */
+  .ft-bar-right .taskbar-module {
+    padding: 0 !important;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    height: 24px;
+  }
+
+  .ft-bar-right .taskbar-module svg,
+  .ft-bar-right .taskbar-module img {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  /* Selected state: show background when popup is open */
+  .ft-bar-right .taskbar-module.selected {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+/* Toolbar 前景色：始终为白色（不跟随系统深浅色） */
+.ft-bar .taskbar-module,
+.ft-bar .ft-bar-item {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+
+.ft-bar-item-tooltip {
+  .ft-bar.top & {
+    top: calc(var(--config-height) + 4px) !important; /* Override inline style */
+  }
+  .ft-bar.bottom & {
+    bottom: calc(var(--config-height) + 4px) !important; /* Override inline style */
+  }
+}
+
+.ft-bar-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ft-bar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+
+  .ft-bar-item-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    > span {
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: pre;
+    }
+  }
+}
+
+.ft-bar-center {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.ft-bar-right {
+  flex: 0 0 auto;
+}
+
+.ft-bar-item {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 200ms ease;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* 移除系统深浅色对 toolbar 前景的影响 */
+
+.ft-bar-item:hover {
+  background: var(--color-gray-400); /* 改为灰色悬浮背景 */
+  transform: translateY(-1px);
+}
+
+.ft-bar-context-menu {
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  color: #fff;
+}

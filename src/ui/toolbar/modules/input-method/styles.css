@@ -1,0 +1,396 @@
+.input-method-module {
+  /* 自动布局子元素 */
+  width: auto;
+  min-width: 36px;
+  height: 24px;
+  /* 自动布局 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  gap: 4px;
+  z-index: 1;
+  box-sizing: border-box;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.input-method-module.selected {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+.input-method-label {
+  height: 15px;
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  line-height: 1;
+  user-select: none;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: normal;
+  display: flex;
+  align-items: center;
+  color: inherit;
+}
+
+/* 工具栏中文本始终为白色（如"拼""中"） */
+.ft-bar .input-method-label {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.input-method-icon {
+  /* 自动布局子元素 */
+  width: 20px;
+  height: 20px;
+  z-index: 0;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* 非微软输入法图标使用较小尺寸 */
+.input-method-icon-small {
+  width: 16px;
+  height: 16px;
+}
+
+/* 输入法图标颜色 - 根据背景是否为黑色 */
+.ft-bar.ft-bar-has-maximized .input-method-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ft-bar:not(.ft-bar-has-maximized) .input-method-icon {
+  color: #151515;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ft-bar:not(.ft-bar-has-maximized) .input-method-icon {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .ft-bar:not(.ft-bar-has-maximized) .input-method-icon {
+    color: #151515;
+  }
+}
+
+/* Popup layout */
+.ime-popup {
+  /* 自动布局子元素 */
+  width: 316px;
+  height: auto;
+  /* 自动布局 */
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0px 4px 0px;
+  gap: 12px;
+  align-self: stretch;
+  z-index: 0;
+  /* pcMenuRadius */
+  /* 样式描述：菜单面板圆角 */
+  border-radius: 9px;
+  /* colorMenuBgDark */
+  /* 样式描述：亚克力菜单面板背景色 */
+  background: rgba(20, 20, 22, 0.75);
+  /* Dark/前景色/colorSubheaderDivider */
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  /* 亚克力背景模糊：改为局部 ::before 层，避克影响全局 */
+  position: relative;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-popup {
+    background: rgba(250, 251, 253, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* 模糊效果由 liquidglass_dll 实现，不再需要 CSS backdrop-filter */
+
+.ime-popup-title {
+  /* 自动布局子元素 */
+  width: 284px;
+  height: 18px;
+  z-index: 0;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: normal;
+  /* Dark/前景色/textColorPrimary */
+  color: rgba(255, 255, 255, 0.86);
+  margin: 0 0 0 16px;
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-popup-title {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.ime-section-title {
+  font-size: 12px;
+  opacity: 0.7;
+  padding: 2px 6px;
+}
+
+.ime-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0px;
+  max-height: none;
+  overflow: visible;
+}
+
+.ime-item-container {
+  /* 自动布局子元素 */
+  width: calc(100% - 0px);
+  height: 56px;
+  /* 自动布局 */
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  z-index: 0;
+}
+
+.ime-list li {
+  /* 自动布局子元素 */
+  width: 100%;
+  height: 48px;
+  /* 自动布局 */
+  display: flex;
+  padding: 4px 16px;
+  gap: 8px;
+  z-index: 0;
+  /* pcButtonRadiusM */
+  border-radius: 8px;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* Override global reset to allow clickable items */
+  cursor: pointer !important;
+  box-sizing: border-box;
+}
+
+.ime-list li:hover {
+  /* Consistent with project reset styles for hover */
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ime-list li:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-list li:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  .ime-list li:active {
+    background: rgba(0, 0, 0, 0.12);
+  }
+}
+
+.ime-list li:last-child {
+  margin: 0;
+}
+
+.ime-list li .ime-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ime-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 4px;
+}
+
+.ime-title {
+  /* 自动布局子元素 */
+  min-width: 140px;
+  max-width: 200px;
+  height: 24px;
+  z-index: 0;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: normal;
+  /* Dark/前景色/textColorPrimary */
+  color: rgba(255, 255, 255, 0.86);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-title {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.ime-description {
+  /* 自动布局子元素 */
+  width: 110px;
+  height: 16px;
+  z-index: 1;
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  /* Dark/前景色/textColorSecondary */
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ime-icon {
+  /* 自动布局子元素 */
+  width: 21px;
+  height: 21px;
+  z-index: 0;
+  flex-shrink: 0;
+  object-fit: contain;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-description {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .ime-icon {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.ime-icon-text {
+  /* 自动布局子元素 */
+  width: 24px;
+  height: 24px;
+  z-index: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+/* 工具栏内无图标文本徽标也保持白色 */
+.ft-bar .ime-icon-text {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.ime-list li .ime-badge {
+  /* 自动布局子元素 */
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  flex: 0 0 auto;
+  margin-right: 0;
+  margin-top: 4px;
+}
+
+.ime-list li.empty {
+  opacity: 0.6;
+  cursor: default !important;
+}
+
+.ime-divider {
+  width: 316px;
+  height: 0px;
+  z-index: 0;
+  /* Dark/前景色/colorSubheaderDivider */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-divider {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.ime-more-settings {
+  height: 20px;
+  z-index: 0;
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: normal;
+  /* Dark/前景色/textColorPrimary */
+  color: rgba(255, 255, 255, 0.86);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  white-space: nowrap;
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-more-settings {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.ime-settings-container {
+  /* 自动布局子元素 */
+  width: 316px;
+  height: 40px;
+  /* 自动布局 */
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  align-self: stretch;
+  z-index: 4;
+}
+
+.ime-settings-inner {
+  /* 自动布局子元素 */
+  width: 308px;
+  height: 32px;
+  /* 自动布局 */
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  z-index: 0;
+  /* pcButtonRadiusM */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ime-settings-inner:hover {
+  /* colorHoverDark */
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ime-settings-inner:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (prefers-color-scheme: light) {
+  .ime-settings-inner:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  .ime-settings-inner:active {
+    background: rgba(0, 0, 0, 0.12);
+  }
+}

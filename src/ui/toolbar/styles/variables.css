@@ -1,0 +1,10 @@
+:root {
+  --config-height: 32px;
+  --config-padding-at-side: 6px;
+
+  --config-accent-color: #ff0000;
+  --config-accent-color-rgb: 255, 0, 0;
+
+  --config-time-before-hide: 0ms;
+  --config-time-before-show: 120ms;
+}

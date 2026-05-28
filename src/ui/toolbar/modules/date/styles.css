@@ -1,0 +1,62 @@
+.date-module {
+  /* 自动布局子元素 */
+  width: auto;
+  height: 24px;
+  /* 自动布局 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 4px;
+  z-index: 5;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+  color: rgba(255, 255, 255, 0.9); /* toolbar 前景固定为白色 */
+}
+
+.date-module.selected {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 移除深浅色影响：保持白色 */
+
+.date-container {
+  /* 自动布局 */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  height: 100%;
+}
+
+.date-content {
+  /* 自动布局子元素 */
+  width: auto;
+  height: 15px;
+  z-index: 0;
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  letter-spacing: normal;
+  /* 继承自容器，保持白色 */
+  color: inherit;
+  margin-left: 10px;
+  margin-right: 10px;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.date-line {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 移除深浅色影响：文本继承白色 */
+
+

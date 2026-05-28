@@ -1,0 +1,22 @@
+[
+  {
+    "name": "WeChat",
+    "processNames": ["Weixin", "WeChat"],
+    "hotkey": {
+      "modifiers": ["Control", "Alt"],
+      "key": "W"
+    },
+    "suppressLaunchWhenProcessExists": true,
+    "waitForWindowMs": 1200
+  },
+  {
+    "name": "QQ",
+    "processNames": ["QQ", "QQNT"],
+    "hotkey": {
+      "modifiers": ["Control", "Alt"],
+      "key": "X"
+    },
+    "suppressLaunchWhenProcessExists": true,
+    "waitForWindowMs": 1200
+  }
+]

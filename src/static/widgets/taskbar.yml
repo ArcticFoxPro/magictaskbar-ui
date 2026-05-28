@@ -1,0 +1,7 @@
+﻿id: "@effect/taskbar"
+icon: BiDockBottom
+metadata:
+  displayName:
+    en: Dock/Taskbar
+    zh-CN: 任务栏
+instances: ReplicaByMonitor

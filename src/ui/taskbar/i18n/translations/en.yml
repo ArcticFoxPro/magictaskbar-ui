@@ -1,0 +1,195 @@
+app_menu:
+  ai_search: AISearch
+  explorer: File Explorer
+  hn_app_store: HnAppStore
+  hn_note: HonorWorkStation
+  pc_manager: PC Manager
+  ai_assistant: AIAssistantMain
+  close: Exit
+  close_multiple: Close All
+  copy_handles: Copy Handles
+  kill: Kill Process
+  kill_multiple: Kill All Processes
+  open: Open
+  open_file_location: Open File Location
+  pin: Pin
+  pin_to_center: Pin to Center
+  pin_to_left: Pin to Left
+  pin_to_right: Pin to Right
+  run_as: Run as Administrator
+  unpin: Unpin
+context_menu:
+  reorder_disable: Lock taskbar
+  reorder_enable: Unlock taskbar
+media:
+  not_playing: Nothing is playing
+media_menu:
+  remove: Remove Media Module
+start_menu:
+  remove: Remove Start Module
+  name: Start
+taskbar_menu:
+  add_file: Pin Custom File
+  add_folder: Pin Custom Folder
+  media: Add Media Module
+  settings: Settings
+  start: Add Start Module
+  task_manager: Task Manager
+taskbar:
+  empty: No items to show
+  recycle_bin: Recycle Bin
+power_menu:
+  account: Account
+  settings: Settings
+  lock: Lock
+  sleep: Sleep
+  shutdown: Shut down
+  restart: Restart
+  exit: Exit Magic Vision
+  checkupdate: Check for Updates
+  feedback: Feedback
+  about: About
+
+about:
+  title: About
+  close: Close
+  app_name: Magic Vision
+  version: Version
+  loading: Loading...
+  unknown: Unknown version
+  beta: Beta Pioneer Edition
+  opensource: Open Source Software Notice
+  copyright: Copyright © Honor Device Co., Ltd. All rights reserved.
+
+check_update:
+  title: Check for Updates
+  close: Close
+  checking: Checking
+  new_version_found: New version available
+  already_latest: Already up to date
+  new_version: "New version: "
+  current_version: "Current version: "
+  installing: Installing
+  download_complete: Download complete
+  downloading: Downloading
+  updating: Updating
+  confirm_install: Confirm Install
+  update_now: Update Now
+  check_update: Check for Updates
+
+feedback:
+  title: Feedback
+  close: Close
+  opinion_type: Opinion Type
+  problem: Problem
+  suggestion: Suggestion
+  feedback_type: Feedback Type
+  feedback_types:
+    upgrade_install_uninstall: Upgrade/Install/Uninstall
+    animation: Animation
+    desktop: Desktop
+    desktop_widget: Desktop Widget
+    desktop_wallpaper: Desktop Wallpaper
+    bottom_taskbar: Bottom Taskbar
+    top_taskbar: Top Toolbar
+    control_center: Control Center
+    calendar_notification: Calendar & Notification
+    ai_recommendation: AI Recommendation
+    hummingbird_engine: Pure System
+    ui_design: UI Design
+    account_settings: Account & Settings
+    other: Other
+  description: Description
+  description_placeholder: Please describe your problem or suggestion...
+  upload_logs: Upload logs to help troubleshoot issues
+  contact_method: Contact Method
+  contact_methods:
+    wechat: WeChat
+    qq: QQ
+    email: Email
+    phone: Phone
+  contact_placeholder: "Please enter {{method}} ID"
+  official_contact: "Official Contact: Join Magic Vision QQ Group 1060929894 for faster support."
+  qrcode_hint: "QQ Group QR code:"
+  qrcode_alt: "QQ Group QR Code"
+  submit: Submit Feedback
+  expand: Expand
+
+recycle_bin:
+  close: Close
+  empty: Empty Recycle Bin
+
+input_method:
+  title: Input Method
+  chinese: Chinese
+  english: English
+  not_detected: No input method detected
+  simplified_chinese: Simplified Chinese (China)
+  more_settings: More keyboard settings
+  sougou: Sougou Input Method
+  baidu: Baidu Input Method
+  wechat: WeChat Input Method
+  xunfei: iFlytek Input Method
+  qq_pinyin: QQ Pinyin
+  microsoft_pinyin: Microsoft Pinyin
+  current: Current
+  input: Input
+
+bluetooth:
+  title: Bluetooth
+  paired_devices: Paired devices
+  available_devices: Available devices
+  unknown_device: Unknown device
+  this_device: This device
+  pairing_failed_title: Bluetooth Connection Failed
+  pairing_failed_content: 'Unable to connect to "{{deviceName}}". Possible reasons:'
+  pairing_failed_reason1: The device's Bluetooth is turned off or out of range
+  pairing_failed_reason2: The device is already connected to another device, please disconnect and try again
+  pairing_failed_button: OK
+  disconnect_title: Disconnect
+  cancel_pairing_title: Cancel Pairing
+  cancel: Cancel
+  unpair: Unpair
+  disconnect: Disconnect
+  connect: Connect
+  pairing_request_title: Bluetooth Pairing Request
+  pair: Pair
+  username: Username
+  password: Password
+  device_type: Device type
+  battery: Battery
+  connecting: Connecting
+  more_settings: More Bluetooth settings
+
+network:
+  title: WLAN
+  network_share: Network Share
+  available_devices: Available Devices
+  not_connected: Not Connected
+  connected: Connected
+  connecting: Connecting
+  connecting_aria: Connecting
+  wlan_switch: WLAN Switch
+  more_settings: More WLAN Settings
+  auto_connect: Auto Connect
+  enabled: Enabled
+  disabled: Disabled
+  status_message: Status Message
+  open_browser: Open browser and connect
+  cancel: Cancel
+  forget: Forget
+  disconnect: Disconnect
+  password: Password
+  show_password: Show Password
+  hide_password: Hide Password
+  connect: Connect
+  enter_password: Please enter password
+  password_error: Incorrect password
+  location_notice: Location service is not enabled,
+  go_settings: Go to Settings
+  streaming_from: 'Streaming from "{{deviceName}}"'
+  login_required: Login Required
+
+volume:
+  title: Volume
+  more_settings: More Sound Settings

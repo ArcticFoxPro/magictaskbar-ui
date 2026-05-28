@@ -1,0 +1,12 @@
+{
+  "$schema": "../gen/schemas/windows-schema.json",
+  "identifier": "@effect/taskbar",
+  "windows": [
+    "QG1hZ2ljL3Rhc2tiYXI="
+  ],
+  "permissions": [
+    "fs:allow-exists",
+    "fs:allow-write-text-file",
+    "fs:scope-appdata-recursive"
+  ]
+}

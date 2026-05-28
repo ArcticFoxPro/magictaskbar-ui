@@ -1,0 +1,19 @@
+pub mod cli;
+pub mod modules;
+pub mod resources;
+pub mod restoration_and_migrations;
+pub mod state;
+pub mod system;
+pub mod utils;
+pub mod widgets;
+pub mod windows_api;
+
+pub mod app;
+pub mod app_instance;
+pub mod error;
+pub mod exposed;
+pub mod hook;
+pub mod main;
+pub mod tauri_context;
+pub mod tauri_plugins;
+pub mod webview_recovery;

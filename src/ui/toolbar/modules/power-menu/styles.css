@@ -1,0 +1,172 @@
+.power-menu-module {
+  /* 自动布局子元素 */
+  width: 72px;
+  height: 24px;
+  /* 自动布局 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 4px;
+  z-index: 0;
+  border-radius: 12px;
+  background: transparent;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+  cursor: pointer;
+  /* Ensure entire background area is clickable */
+  user-select: none;
+  color: rgba(255, 255, 255, 0.9); /* toolbar 始终白色前景，不跟随深浅色 */
+}
+
+/* 移除系统深浅色影响：保持 toolbar 前景为白色 */
+
+.power-menu-module.selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.honor-icon {
+  /* 自动布局子元素 */
+  width: 54px;
+  height: 20px;
+  z-index: 1;
+  object-fit: contain;
+  user-select: none;
+}
+
+.power-menu-popup {
+  width: 200px;
+  height: 400px;
+  /* 自动布局 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+
+  border-radius: 9px;
+  background: rgba(20, 20, 22, 0.75);
+  /* Dark/前景色/colorSubheaderDivider */
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  /* 亚克力背景模糊：改为局部 ::before 层，避克影响全局 */
+  position: relative;
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  .power-menu-popup {
+    background: rgba(250, 251, 253, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* 模糊效果由 liquidglass_dll 实现，不再需要 CSS backdrop-filter */
+
+.power-menu-item-container {
+  /* 自动布局子元素 */
+  width: 192px;
+  height: 40px;
+  /* 自动布局 */
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.power-menu-item {
+  /* 自动布局子元素 */
+  width: 192px;
+  height: 32px;
+  /* 自动布局 */
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  z-index: 0;
+  /* pcButtonRadiusM */
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  transition: background 0.15s ease;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: light) {
+  .power-menu-item {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.power-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.power-menu-item:active {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (prefers-color-scheme: light) {
+  .power-menu-item:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  .power-menu-item:active {
+    background: rgba(0, 0, 0, 0.12);
+  }
+}
+
+.menu-icon {
+  /* 自动布局子元素 */
+  width: 20px;
+  height: 20px;
+  z-index: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  /* 根据深浅色模式设置图标 */
+  filter: brightness(1) saturate(100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-icon {
+    filter: brightness(1) saturate(100%);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .menu-icon {
+    filter: brightness(0) saturate(100%);
+  }
+}
+
+.menu-label {
+  /* 自动布局子元素 */
+  width: 74px;
+  height: 20px;
+  z-index: 2;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: normal;
+  /* Dark/前景色/textColorPrimary */
+  color: rgba(255, 255, 255, 0.9);
+  flex: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .menu-label {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}

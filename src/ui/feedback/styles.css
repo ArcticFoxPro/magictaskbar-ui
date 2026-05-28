@@ -1,0 +1,599 @@
+/* 意见反馈弹窗 - 背景 */
+.feedback-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* 弹窗容器 */
+.feedback-modal-container {
+  width: 700px;
+  height: 610px;
+  background: #F7F8FB;
+  border-radius: 8px;
+  box-shadow: 0px 12px 48px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  padding: 40px 24px 24px 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-modal-container {
+    background: rgba(30, 30, 30, 0.98);
+  }
+}
+
+/* 标题栏区域 - 可拖拽 */
+.feedback-title-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+/* 标题文字 */
+.feedback-modal-title-text {
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  -webkit-app-region: drag;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-modal-title-text {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* 关闭按钮 */
+.feedback-modal-close-btn {
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-app-region: no-drag;
+}
+
+.close-btn-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+@media (prefers-color-scheme: light) {
+  .close-btn-icon {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .close-btn-icon {
+    filter: brightness(1);
+  }
+}
+
+/* 反馈区块 - 行内布局 */
+.feedback-section-inline {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+/* 固定宽度标签 */
+.feedback-label-fixed {
+  width: 72px;
+  flex-shrink: 0;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  padding-top: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-label-fixed {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* 内容区域 */
+.feedback-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 反馈区块 */
+.feedback-section {
+  margin-bottom: 10px;
+}
+
+/* 意见类型行 */
+.opinion-types-row {
+  display: flex;
+  gap: 24px;
+  padding-top: 0;
+}
+
+/* 单个意见类型选项 */
+.opinion-type-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .opinion-type-item {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.opinion-type-item input[type="radio"] {
+  display: none;
+}
+
+/* 自定义单选框（意见类型） */
+.opinion-radio-custom {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .opinion-radio-custom {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.opinion-type-item input[type="radio"]:checked + .opinion-radio-custom {
+  border-color: #256FFF;
+}
+
+.opinion-type-item input[type="radio"]:checked + .opinion-radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #256FFF;
+}
+
+/* 标签文字 */
+.feedback-label {
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-label {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* 必填星号 */
+.required {
+  color: #FA2A2D;
+  margin-left: 2px;
+}
+
+/* 反馈类型网格 */
+.feedback-types-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px 16px;
+  padding-top: 0;
+}
+
+/* 单个类型选项 */
+.feedback-type-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: HONOR Sans Design;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-type-item {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.feedback-type-item input[type="checkbox"] {
+  display: none;
+}
+
+/* 自定义复选框（反馈类型） */
+.type-checkbox-custom {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .type-checkbox-custom {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.feedback-type-item input[type="checkbox"]:checked + .type-checkbox-custom {
+  background: #256FFF;
+  border-color: #256FFF;
+}
+
+.feedback-type-item input[type="checkbox"]:checked + .type-checkbox-custom::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.type-label {
+  white-space: nowrap;
+}
+
+/* 文本域 */
+.feedback-textarea {
+  width: 100%;
+  height: 150px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 6px 14px;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.9);
+  resize: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.feedback-textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.feedback-textarea:focus {
+  border-color: #256FFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .feedback-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* 复选框行 */
+.feedback-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.feedback-checkbox-row input[type="checkbox"] {
+  display: none;
+}
+
+/* 自定义复选框 */
+.checkbox-custom {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .checkbox-custom {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.feedback-checkbox-row input[type="checkbox"]:checked + .checkbox-custom {
+  background: #256FFF;
+  border-color: #256FFF;
+}
+
+.feedback-checkbox-row input[type="checkbox"]:checked + .checkbox-custom::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .checkbox-label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* 联系方式行 */
+.feedback-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.feedback-contact-row .feedback-label {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+/* 下拉框包装 */
+.feedback-dropdown-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* 联系方式输入框 */
+.feedback-contact-input {
+  flex: 1;
+  height: 32px;
+  padding: 0 12px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.feedback-contact-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.feedback-contact-input:focus {
+  border-color: #256FFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-contact-input {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .feedback-contact-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* 下拉框按钮 */
+.feedback-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px;
+  height: 32px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  min-width: 100px;
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-dropdown {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.dropdown-arrow {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+  margin-left: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .dropdown-arrow {
+    filter: brightness(1);
+  }
+}
+
+/* 下拉菜单 */
+.feedback-dropdown-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 4px;
+  min-width: 100px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-dropdown-menu {
+    background: rgba(46, 46, 46, 0.98);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+}
+
+.feedback-dropdown-item {
+  padding: 10px 12px;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-dropdown-item {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.feedback-dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* 官方联系信息 */
+.feedback-official-contact {
+  font-family: HONOR Sans Design;
+  font-size: 12px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-official-contact {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* 二维码区域 */
+.feedback-qrcode-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.feedback-qrcode-bg {
+  width: 660px;
+  height: 120px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback-qrcode-bg {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* 提交按钮 */
+.feedback-submit-btn {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 120px;
+  padding: 0 32px;
+  height: 36px;
+  background: #256FFF;
+  border: none;
+  border-radius: 18px;
+  font-family: HONOR Sans Design;
+  font-size: 14px;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: block;
+}
+
+.feedback-submit-btn:hover {
+  background: #1E5FD9;
+}
+
+.feedback-submit-btn:active {
+  background: #1952BD;
+}
+
+.feedback-qrcode-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}

@@ -1,0 +1,74 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "target": "ESNext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "types": [
+      "react",
+      "readable-types",
+      "node"
+    ],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@icons": [
+        "libs/widgets-shared/components/Icon/icons.ts"
+      ],
+      "@shared": [
+        "libs/widgets-shared/index.ts"
+      ],
+      "@shared/*": [
+        "libs/widgets-shared/*"
+      ],
+      "@magic-ui/lib": [
+      "libs/core/src/lib.ts"
+    ],
+    "@magic-ui/lib/*": [
+      "libs/core/src/*"
+    ],
+    "@magic-ui/lib/tauri": [
+      "libs/core/src/re-exports/tauri.ts"
+    ],
+      "@magic-ui/types": [
+        "libs/core/gen/types/mod.ts"
+      ],
+      "libs/*": [
+        "libs/*"
+      ],
+      "react": [
+        "./node_modules/preact/compat/"
+      ],
+      "react/jsx-runtime": [
+        "./node_modules/preact/jsx-runtime"
+      ],
+      "react-dom": [
+        "./node_modules/preact/compat/"
+      ],
+      "react-dom/*": [
+        "./node_modules/preact/compat/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "libs/core/npm/**",
+    "libs/core/gen/**"
+  ]
+}

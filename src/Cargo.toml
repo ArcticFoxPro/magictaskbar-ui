@@ -1,0 +1,159 @@
+[package]
+name = "magictaskbar-ui"
+version = "2.4.4"
+edition = "2021"
+default-run = "magictaskbar-ui"
+
+[features]
+gen-binds = []
+
+[[bin]]
+name = "magictaskbar-ui"
+path = "background/main.rs"
+
+[build-dependencies]
+tauri-build = { workspace = true }
+
+[dependencies]
+slu-ipc = { workspace = true }
+tauri = { workspace = true, features = ["protocol-asset", "devtools"] }
+tauri-plugin-fs = { workspace = true }
+tauri-plugin-dialog = { workspace = true }
+tauri-plugin-shell = { workspace = true }
+tauri-plugin-process = { workspace = true }
+tauri-plugin-log = { workspace = true }
+tauri-plugin-updater = { workspace = true }
+tauri-plugin-deep-link = { workspace = true }
+
+tauri-plugin-http = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+serde_yaml = { workspace = true }
+lazy_static = { workspace = true }
+parking_lot = { workspace = true }
+log = { workspace = true }
+uuid = { workspace = true }
+image = { workspace = true, features = ["ico"] }
+widestring = { workspace = true }
+itertools = { workspace = true }
+clap = { workspace = true, features = ["derive", "string"] }
+os_info = { workspace = true }
+crossbeam-channel = { workspace = true }
+regex = { workspace = true }
+getset = { workspace = true }
+phf = { workspace = true }
+quick-xml = { workspace = true, features = ["serialize"] }
+rust-i18n = { workspace = true }
+sysinfo = { workspace = true }
+win-screenshot = { workspace = true }
+
+winreg = { workspace = true }
+
+windows-core = { workspace = true } # windows-rs already depends and reexports this, but we need it as a direct dependency (implement macro)
+base64 = { workspace = true }
+webview2-com = "0.38"
+arc-swap = { workspace = true }
+notify-debouncer-full = { workspace = true }
+encoding_rs = { workspace = true }
+evalexpr = { workspace = true }
+
+backtrace = { workspace = true }
+owo-colors = { workspace = true }
+url = { workspace = true }
+
+fern = { workspace = true }
+tokio = { workspace = true }
+libs-core = { workspace = true }
+
+
+
+
+translators = { workspace = true, features = ["google", "tokio-async"] }
+discord-rich-presence = { workspace = true }
+
+windows = { workspace = true, features = [
+    "Win32_Foundation",
+    "ApplicationModel",
+    "ApplicationModel_Core",
+    "Win32_Graphics_Direct3D",
+    "Win32_Graphics_Direct3D11",
+    "Win32_Graphics_Dxgi",
+    "Win32_Graphics_Dxgi_Common",
+    "Win32_Globalization",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Input_Ime",
+    "Win32_UI_TextServices",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_Common",
+    "Win32_UI_Shell_PropertiesSystem",
+    "Win32_UI_Accessibility",
+    "Win32_UI_Controls",
+    "Win32_UI_Notifications",
+    "Win32_Networking_NetworkListManager",
+    "Win32_Graphics_Dwm",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_HiDpi",
+    "Win32_System_DataExchange",
+    "Win32_System_Ole",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_Variant",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemServices",
+    "Win32_System_SystemInformation",
+    "Win32_System_Console",
+    "Win32_System_Registry",
+    "Win32_System_Environment",
+    "Win32_Security",
+    "Win32_Security_Authorization",
+    "Win32_System_Kernel",
+    "Win32_System_IO",
+    "Win32_System_Ioctl",
+    "Win32_System_Services",
+    "Win32_System_EventLog",
+    "Win32_System_TaskScheduler",
+    "Win32_System_Threading",
+    "Win32_System_ProcessStatus",
+    "Win32_System_WinRT",
+    "Win32_System_RemoteDesktop",
+    "Wdk_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Wdk_System_SystemInformation",
+    "Wdk_System_SystemServices",
+    "Win32_System_Power",
+    "Win32_Media",
+    "Win32_Media_Audio",
+    "Win32_Media_Audio_Endpoints",
+    "Win32_Storage_FileSystem",
+    "Win32_Storage_EnhancedStorage",
+    "Win32_Storage_Packaging_Appx",
+    "Win32_Security_Authentication_Identity",
+    "Foundation",
+    "Foundation_Collections",
+    "Foundation_Numerics",
+    "Devices",
+    "Devices_Bluetooth",
+    "Devices_Enumeration",
+    "Devices_Geolocation",
+    "Devices_Radios",
+    "Security_Credentials",
+    "Devices_Bluetooth_GenericAttributeProfile",
+    "Storage_Streams",
+    "Devices_Display",
+    "Devices_Display_Core",
+    "Win32_Devices",
+    "Win32_Devices_Display",
+    "Win32_Devices_Bluetooth",
+    "UI",
+    "UI_Core",
+    "UI_Notifications_Management",
+    "UI_ViewManagement",
+    "deprecated",
+] }
+time = { workspace = true, features = ["formatting", "local-offset"] }
+scc = { workspace = true }
+webbrowser = { workspace = true }
+chrono = { workspace = true }
+zip = { workspace = true }
+walkdir = { workspace = true }

@@ -1,0 +1,22 @@
+.screenshot-module {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-radius 0.2s ease;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.screenshot-module .screenshot-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  object-fit: contain;
+  border-radius: 4px;
+}

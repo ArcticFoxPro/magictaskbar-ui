@@ -23,7 +23,7 @@
   content: "";
   position: absolute;
   left: calc(var(--config-padding-at-side) * -1);
-  top: 0;
+  top: -2px;
   bottom: 0;
   right: 0;
 }

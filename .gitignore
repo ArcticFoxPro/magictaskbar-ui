@@ -13,3 +13,6 @@ monitoring.ps1
 
 # rust-analyzer
 rustc-ice-*.txt
+Cargo.lock
+
+.idea

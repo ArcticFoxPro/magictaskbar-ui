@@ -97,6 +97,14 @@ body {
   }
 }
 
+@supports (corner-shape: squircle) {
+  /* Chromium 139+ 平滑圆角（超椭圆） */
+  .taskbar {
+    corner-shape: squircle;
+    border-radius: 36px;
+  }
+}
+
 /** Taskbar Styles */
 .taskbar {
   --max-taskbar-width: calc(100vw - var(--config-margin) * 2);

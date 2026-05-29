@@ -48,7 +48,7 @@ jobs:
         deno-version: v2.x
 
     - name: Install npm dependencies
-      run: deno install --ignore-scripts
+      run: npm install --ignore-scripts
 
     - name: Full release build
-      run: deno run build:release
+      run: npm run build:release

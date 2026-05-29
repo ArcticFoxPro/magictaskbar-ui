@@ -16,3 +16,4 @@ rustc-ice-*.txt
 Cargo.lock
 
 .idea
+package-lock.json

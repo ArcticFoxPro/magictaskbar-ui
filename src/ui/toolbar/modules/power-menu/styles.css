@@ -16,6 +16,16 @@
   /* Ensure entire background area is clickable */
   user-select: none;
   color: rgba(255, 255, 255, 0.9); /* toolbar 始终白色前景，不跟随深浅色 */
+  position: relative;
+}
+
+.power-menu-module::before { /* 伪元素扩大点击区 */
+  content: "";
+  position: absolute;
+  left: calc(var(--config-padding-at-side) * -1);
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
 
 /* 移除系统深浅色影响：保持 toolbar 前景为白色 */

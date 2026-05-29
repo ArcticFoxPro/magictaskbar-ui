@@ -43,3 +43,11 @@ jobs:
 
     - name: Full release build
       run: npm run build:release
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v7
+      with:
+        name: magictaskbar-ui
+        path: target/release/magictaskbar-ui.exe
+        if-no-files-found: error
+        retention-days: 90

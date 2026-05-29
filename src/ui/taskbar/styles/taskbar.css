@@ -52,10 +52,12 @@
 
     > .bg-layers > .bg-layer-2 {
       corner-shape: squircle;
+      border-radius: 36px;
     }
 
     > .taskbar-items-container {
       corner-shape: squircle;
+      border-radius: 36px;
     }
   }
 

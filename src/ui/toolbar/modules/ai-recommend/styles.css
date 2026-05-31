@@ -5,6 +5,15 @@
   position: relative; /* 让弹窗可相对定位到模块容器 */
 }
 
+.ai-recommend-module::before { /* 伪元素扩大点击区 */
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 /* 外部容器（每个 aiFunction） */
 .ai-recommend-item {
   height: 24px;

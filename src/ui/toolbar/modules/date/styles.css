@@ -14,6 +14,16 @@
   user-select: none;
   transition: background-color 0.2s ease, border-radius 0.2s ease;
   color: rgba(255, 255, 255, 0.9); /* toolbar 前景固定为白色 */
+  position: relative;
+}
+
+.date-module::before { /* 伪元素扩大点击区 */
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .date-module.selected {

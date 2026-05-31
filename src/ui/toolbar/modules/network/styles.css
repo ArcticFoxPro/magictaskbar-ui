@@ -1,10 +1,18 @@
-.network-status { /* 自动布局子元素 */ width: 36px; height: 24px; /* 自动布局 */ display: flex; align-items: center; justify-content: center; padding: 0; gap: 0px 0px; z-index: 1; cursor: pointer; user-select: none; transition: background-color 0.2s ease, border-radius 0.2s ease; color: rgba(255, 255, 255, 0.86); }
+.network-status { /* 自动布局子元素 */ width: 36px; height: 24px; /* 自动布局 */ display: flex; align-items: center; justify-content: center; padding: 0; gap: 0px 0px; z-index: 1; position: relative; cursor: pointer; user-select: none; transition: background-color 0.2s ease, border-radius 0.2s ease; color: rgba(255, 255, 255, 0.86); }
+.network-status::before { /* 伪元素扩大点击区 */
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .network-status.selected { background-color: rgba(255, 255, 255, 0.1) !important; border-radius: 12px !important; }
 .network-module { /* 自动布局子元素 */ width: 36px; height: 24px; /* 自动布局 */ display: flex; align-items: center; justify-content: center; padding: 0; gap: 0px 0px; z-index: 1; position: relative; cursor: pointer; user-select: none; transition: background-color 0.2s ease, border-radius 0.2s ease; }
 .network-module::before { /* 伪元素扩大点击区 */
   content: "";
   position: absolute;
-  top: -2px;
+  top: -3px;
   left: 0;
   bottom: 0;
   right: 0;

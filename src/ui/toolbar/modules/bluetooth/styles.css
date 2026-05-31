@@ -17,7 +17,7 @@
 .bluetooth-module::before { /* 伪元素扩大点击区 */
   content: "";
   position: absolute;
-  top: -2px;
+  top: -3px;
   left: 0;
   bottom: 0;
   right: 0;

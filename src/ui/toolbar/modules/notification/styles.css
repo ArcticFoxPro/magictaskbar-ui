@@ -20,7 +20,7 @@
   content: "";
   position: absolute;
   right: calc(var(--config-padding-at-side) * -1);
-  top: -2px;
+  top: -3px;
   bottom: 0;
   left: 0;
 }
